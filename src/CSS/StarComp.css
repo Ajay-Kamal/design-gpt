@@ -1,0 +1,13 @@
+.svg-container {
+  border: none;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  margin-top: -240px;
+}
+

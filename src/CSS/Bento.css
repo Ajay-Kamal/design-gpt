@@ -1,0 +1,75 @@
+.bento {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: auto;
+  margin: 10%;
+}
+
+@font-face {
+  font-family: "Bohemian"; /* Give your font a name */
+  src: url("/fonts/Bohemian Soul.woff2") format("woff2"),
+    /* Path to the font file */ url("/fonts/Bohemian Soul.woff") format("woff"); /* Fallback for older browsers */
+  font-weight: normal; /* Specify the font weight */
+  font-style: normal; /* Specify the font style */
+}
+
+.left-comp {
+  position: absolute;
+  left: 0;
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.right-comp {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-top {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  fill: linear-gradient(
+    0deg,
+    rgb(0, 119, 255) -430.53%,
+    rgb(255, 0, 149) 100%
+  );
+  stroke-width: 1px;
+  stroke: rgba(255, 91, 190, 0.97);
+  box-shadow: 0px 0px 12px 0px rgba(238, 170, 211, 0.33) inset,
+    0px 0px 12px 0px rgba(177, 200, 250, 0.71) inset;
+  backdrop-filter: blur(11px);
+}
+
+.left-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.right-top {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.right-bottom {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.chotu {
+  position: absolute;
+  right: 50%;
+  transform: translateX(50%); /* Centers it properly */
+  z-index: 999;
+}

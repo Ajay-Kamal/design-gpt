@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Bohemian"; /* Give your font a name */
+  src: url("/fonts/Bohemian Soul.woff2") format("woff2"),
+    /* Path to the font file */ url("/fonts/Bohemian Soul.woff")
+      format("woff"); /* Fallback for older browsers */
+  font-weight: normal; /* Specify the font weight */
+  font-style: normal; /* Specify the font style */
+}
+
+.name-comp{
+  padding: 0;
+  margin: 0;
+  margin-top:0;
+}
+
+.head {
+  align-self: stretch;
+  text-align: center;
+  font-family: "Bohemian";
+  font-size: 4rem; /* Use rem for scalable font size */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2; /* Use unitless line-height for better scaling */
+  background: linear-gradient(91deg, #ff008a 36.92%, #007aff 65.26%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 8px auto; /* Center the text horizontally */
+  padding-bottom:3px; /* Add padding to prevent text from touching edges */
+}
+
+.para {
+  align-self: stretch;
+  color: var(--Text-Primary-TextColor, #191919);
+  text-align: center;
+  font-family: "Poppins", sans-serif; /* Add fallback font */
+  font-size: 1.125rem; /* Use rem for scalable font size */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6; /* Use unitless line-height for better scaling */
+  margin: 0 auto; /* Add margin for spacing */
+  padding: 0 1rem; /* Add padding to prevent text from touching edges */ /* Limit paragraph width for better readability */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .head {
+    font-size: 3.5rem; /* Adjust font size for smaller screens */
+  }
+  .para {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .head {
+    font-size: 2.5rem; /* Adjust font size for tablets */
+  }
+  .para {
+    font-size: 0.875rem; /* Adjust font size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .head {
+    font-size: 2rem; /* Adjust font size for mobile devices */
+  }
+  .para {
+    font-size: 0.75rem; /* Adjust font size for mobile devices */
+  }
+}
