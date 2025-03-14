@@ -12,8 +12,8 @@ const TeamCard = ({ props }) => {
             <span className="profile-status">Seeking an opportunity</span>
           </div>
         </div>
-        <img src="public/teamcard-Bg.svg" alt="card" className="profile-background" id="profileBg" />
-        <img src="public/teamcard-Nancy.svg" alt="profile top" className="profile-top" />
+        <img src="/teamcard-Bg.svg" alt="card" className="profile-background" id="profileBg" />
+        <img src="/teamcard-Nancy.svg" alt="profile top" className="profile-top" />
       </div>
       <div className="icon-wrapper">
         <div className="inner-icon">

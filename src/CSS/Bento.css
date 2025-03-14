@@ -25,10 +25,6 @@
   width: 100%;
   position: absolute;
   top: 0;
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .persona-genie {
