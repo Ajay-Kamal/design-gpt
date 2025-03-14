@@ -176,7 +176,6 @@ const Bento = () => {
                  keyTimes="0; 0.2; 0.5; 1"
                  values="-800 0; -800 0; 200 0; 200 0"
                  dur="12s"
-                 begin="0s"
                  repeatCount="indefinite"
                 // attributeName="gradientTransform"
                 // type="translate"
