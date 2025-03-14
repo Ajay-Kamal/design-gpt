@@ -1,12 +1,3 @@
-.bento {
-  width: 100vw;
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: auto;
-  margin: 10%;
-}
-
 @font-face {
   font-family: "Bohemian"; /* Give your font a name */
   src: url("/fonts/Bohemian Soul.woff2") format("woff2"),
@@ -15,61 +6,416 @@
   font-style: normal; /* Specify the font style */
 }
 
-.left-comp {
-  position: absolute;
-  left: 0;
+.bento {
+  width: 100vw;
   display: flex;
-  width: 50%;
-  height: 100%;
-  flex-direction: column;
+  position: relative;
+  height: clamp(400px, 50vw, 570px);
 }
 
-.right-comp {
-  position: absolute;
-  right: 0;
+.left-comp {
   width: 50%;
   height: 100%;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
 .left-top {
+  width: 100%;
   position: absolute;
-  left: 0;
-  bottom: 0;
-  fill: linear-gradient(
-    0deg,
-    rgb(0, 119, 255) -430.53%,
-    rgb(255, 0, 149) 100%
+  top: 0;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.persona-genie {
+  position: absolute;
+  height: 75%;
+  width: 65%;
+  left: 60px;
+  border-radius: 40px;
+  border: 2px solid #fff;
+  background: linear-gradient(
+    223deg,
+    rgba(247, 245, 254, 0.5) 10.31%,
+    rgba(236, 240, 255, 0.5) 79.16%,
+    rgba(255, 234, 255, 0.5) 93.95%
   );
-  stroke-width: 1px;
-  stroke: rgba(255, 91, 190, 0.97);
-  box-shadow: 0px 0px 12px 0px rgba(238, 170, 211, 0.33) inset,
-    0px 0px 12px 0px rgba(177, 200, 250, 0.71) inset;
-  backdrop-filter: blur(11px);
+  box-shadow: 0px 0px 22px 0px rgba(243, 134, 249, 0.18);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pg-head {
+  text-align: center;
+  position: relative;
+  top: 40px;
+  width: 470px;
+  font-family: "Bohemian";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 104%; /* 57.2px */
+  background: linear-gradient(94deg, #ff008a 29.89%, #007aff 70.85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pg-tail {
+  width: 424px;
+  color: rgba(42, 50, 60, 0.54);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  position: relative;
+  top: 42px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.left-grid {
+  position: absolute;
+  left: -258px;
+  top: -1px;
+  fill: radial-gradient(
+    96.72% 96.59% at 50.05% 91.08%,
+    #fff 69.37%,
+    #ec0992 100%
+  );
+  opacity: 1;
 }
 
 .left-bottom {
+  width: 100%;
   position: absolute;
-  left: 0;
   bottom: 0;
 }
 
+.right-comp {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .right-top {
+  width: 100%;
   position: absolute;
-  right: 0;
   top: 0;
+  z-index: 0;
 }
 
 .right-bottom {
+  width: 100%;
   position: absolute;
-  right: 0;
-  top: 0;
+  bottom: 0;
 }
 
 .chotu {
+  width: fit-content;
+  height: fit-content;
   position: absolute;
-  right: 50%;
-  transform: translateX(50%); /* Centers it properly */
-  z-index: 999;
+  top: 50%;
+  z-index: 100;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.chotu-animation {
+  position: absolute;
+  top: 13.4px;
+  width: 274.75px;
+  height: 233.121px;
+  flex-shrink: 0;
+  left: 13px;
+  border-radius: 23.199px;
+  overflow: hidden;
+}
+
+.eyes-closed {
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  left: 23%;
+  top: 35%;
+  animation: hideEyesClosed 12s infinite ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.eyes-opened {
+  position: absolute;
+  left: 23%;
+  top: 30%;
+  opacity: 0;
+  visibility: hidden;
+  animation: showEyesOpened 12s infinite ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.pagal-gif {
+  position: absolute;
+  height: 100%;
+  left: -25%;
+  opacity: 0;
+  visibility: hidden;
+  animation: showGif 12s infinite ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+@keyframes hideEyesClosed {
+  0%, 50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  51%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes showEyesOpened {
+  0%, 50% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  51%, 60% {
+    opacity: 1;
+    visibility: visible;
+  }
+  61%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes showGif {
+  0%, 60% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  61%, 100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.ring-sec {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 50px;
+  justify-content: center;
+}
+
+.ingenerative {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+  left: 70px;
+  height: 70%;
+}
+
+.interview {
+  position: relative;
+  top: -40px;
+  height: 200px;
+}
+
+.int-top {
+  position: absolute;
+  left: 198px;
+  top: -20px;
+  filter: drop-shadow(-5px 3px 12px rgba(42, 50, 60, 0.07));
+  transform: rotate(-1.875deg);
+  fill: #fff;
+}
+
+.generation {
+  overflow: hidden;
+  height: 55%;
+  align-self: stretch;
+  width: 91%;
+  top: 200px;
+  position: absolute;
+  border-radius: 24px;
+  left: 23px;
+  border: 1px solid #fff;
+  background: linear-gradient(
+    224deg,
+    rgba(247, 245, 254, 0.5) 10.35%,
+    rgba(236, 240, 255, 0.5) 88.62%,
+    rgba(255, 234, 255, 0.5) 105.43%
+  );
+  box-shadow: 0px 0px 22px 0px rgba(243, 134, 249, 0.18);
+  backdrop-filter: blur(6px);
+}
+
+.gen-grid {
+  position: absolute;
+  left: -150px;
+}
+
+.gne-head {
+  text-align: center;
+  font-family: "Bohemian";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 104%; /* 57.2px */
+  background: linear-gradient(94deg, #ff008a 29.89%, #007aff 70.85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 23px;
+  left: 75px;
+}
+
+.gne-tail {
+  color: rgba(42, 50, 60, 0.54);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: absolute;
+  top: 79px;
+  left: 115px;
+}
+
+.gen-anime {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.to-slide {
+  display: flex;
+  height: 40px;
+  justify-content: flex-start;
+  align-self: stretch;
+  gap: 16px;
+  overflow: hidden; /* Hide overflow */
+  position: relative; /* Required for GSAP transformations */
+  white-space: nowrap;
+}
+
+.to-slide div {
+  height: 100%;
+  display: flex;
+  width: fit-content;
+  padding: 8px 16px;
+  justify-content: center;
+  border-radius: var(--Radius--lg, 12px);
+  background: #fff;
+  border: 1px solid;
+  box-shadow: 0px -4px 3px 0px rgba(227, 227, 227, 0.88) inset,
+    0px -2px 2px 0px #fafafa inset;
+  align-items: center;
+  color: rgba(42, 50, 60, 0.54);
+  text-align: center;
+  font-family: "Inter";
+  font-size: 16px;
+  white-space: nowrap;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: -0.176px;
+  /* border-image:radial-gradient(180deg, #f20790 -9.58%, #05f 126.62%) 1; 
+    border: 2px solid transparent; */
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(-180deg, rgba(177, 200, 250, 1), rgba(238, 170, 211, 1))
+      border-box;
+}
+
+.fro-slide {
+  display: flex;
+  height: 40px;
+  justify-content: flex-end;
+  gap: 16px;
+  align-items: center;
+  color: rgba(42, 50, 60, 0.54);
+  align-self: stretch;
+  overflow: hidden; /* Hide overflow */
+  position: relative; /* Required for GSAP transformations */
+}
+
+.fro-slide div {
+  height: 100%;
+  display: flex;
+  padding: 8px 16px;
+  width: max-content;
+  border-radius: var(--Radius--lg, 12px);
+  border: 1px solid #d9ccf3;
+  align-items: center;
+  white-space: nowrap;
+  background: #fff;
+  box-shadow: 0px -4px 3px 0px rgba(227, 227, 227, 0.88) inset,
+    0px -2px 2px 0px #fafafa inset;
+  text-align: center;
+  color: var(--Text-Teritary-Text-Color, rgba(25, 25, 25, 0.5));
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.176px;
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(-180deg, rgba(177, 200, 250, 1), rgba(238, 170, 211, 1))
+      border-box;
+}
+
+@keyframes train-motion {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-970px); /* Move left by 200px (2 children) */
+  }
+  100% {
+    transform: translateX(0); /* Return to the start */
+  }
+}
+
+@keyframes train-motion2 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(970px); /* Move left by 200px (2 children) */
+  }
+  100% {
+    transform: translateX(0); /* Return to the start */
+  }
+}
+
+.to-slide .to-comp {
+  animation: train-motion 30s linear infinite; /* Adjust duration as needed */
+}
+
+.fro-slide .fro-comp {
+  animation: train-motion2 30s linear infinite;
+}
+

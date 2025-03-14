@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Bohemian"; /* Give your font a name */
+  src: url("/fonts/Bohemian Soul.woff2") format("woff2"),
+    /* Path to the font file */ url("/fonts/Bohemian Soul.woff") format("woff"); /* Fallback for older browsers */
+  font-weight: normal; /* Specify the font weight */
+  font-style: normal; /* Specify the font style */
+}
+
+.dev-team {
+  width: 80%;
+  margin-top: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dev-team-head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.code-wizards {
+  display: flex;
+  align-items: center;
+}
+
+.code-wizards p {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(90deg, #f20790 0%, #007aff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.left-w {
+  width: 152px;
+  height: 18.424px;
+}
+
+.right-w {
+  width: 152px;
+  height: 18.424px;
+}
+
+.dt-content {
+  align-self: stretch;
+  color: var(--Text-Primary-TextColor, #191919);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.dt-content span {
+  background: linear-gradient(90deg, #f20790 23.23%, #007aff 43.22%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Bohemian";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.12px;
+}
