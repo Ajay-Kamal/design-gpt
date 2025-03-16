@@ -1,11 +1,18 @@
 import "../CSS/Bento.css";
-import React from "react";
+import { useInView } from "react-intersection-observer";
+import React, { useEffect, useRef, useState } from "react";
 
 const Bento = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only trigger once
+    threshold: 0.9, // Percentage of the component visible to trigger
+  });
+
   return (
     <div className="bento">
-      <div className="left-comp">
-        <svg className="left-top"
+      <div ref={ref} className="left-comp">
+        <svg
+          className="left-top"
           width="702"
           height="108"
           viewBox="0 0 702 108"
@@ -159,32 +166,34 @@ const Bento = () => {
               <stop offset="0.664949" stopColor="#F20790" />
               <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
             </linearGradient>
-            <linearGradient
-              id="paint1_linear_7183_7015"
-              x1="-6.00005"
-              y1="10.5"
-              x2="653.905"
-              y2="110.807"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#0D77FB" />
-              <stop offset="0.664949" stopColor="#F20790" />
-              <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
-              <animateTransform
-                 attributeName="gradientTransform"
-                 type="translate"
-                 keyTimes="0; 0.2; 0.5; 1"
-                 values="-800 0; -800 0; 200 0; 200 0"
-                 dur="12s"
-                 repeatCount="indefinite"
-                // attributeName="gradientTransform"
-                // type="translate"
-                // keyTimes="0; 0.2; 0.5; 1"
-                // values="-800 0; -800 0; 200 0; 0 0"
-                // dur="10s"
-                // repeatCount="indefinite"
-              />
-            </linearGradient>
+              <linearGradient
+                id="paint1_linear_7183_7015"
+                x1="-6.00005"
+                y1="10.5"
+                x2="653.905"
+                y2="110.807"
+                gradientUnits="userSpaceOnUse"
+              >   
+                  <stop stopColor="#0D77FB" />
+                  <stop offset="0.664949" stopColor="#F20790" />
+                  <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
+                  {inView && (
+                    <animateTransform
+                    attributeName="gradientTransform"
+                    type="translate"
+                    keyTimes="0; 0.2; 0.5; 1"
+                    values="-800 0; -800 0; 200 0; 200 0"
+                    dur="12s"
+                    begin='0s'
+                    repeatCount="indefinite"
+                    // attributeName="gradientTransform"
+                    // type="translate"
+                    // keyTimes="0; 0.2; 0.5; 1"
+                    // values="-800 0; -800 0; 200 0; 0 0"
+                    // dur="10s"
+                    // repeatCount="indefinite"
+                  />)}
+              </linearGradient>
             <linearGradient
               id="paint2_linear_7183_7015"
               x1="293.309"
@@ -943,9 +952,16 @@ const Bento = () => {
           </defs>
         </svg>
         <div className="chotu-animation">
-          <img src="/Eyes-Closed.svg" alt="" className="eyes-closed" />
-          <img src="/Eyes-Open.svg" className="eyes-opened" />
-          <img src="/Untitled design.gif" className="pagal-gif" />
+          <img
+            src="/Eyes-Closed.svg"
+            alt=""
+            className="eyes-closed animated-element"
+          />
+          <img src="/Eyes-Open.svg" className="eyes-opened animated-element" />
+          <img
+            src="/Untitled design.gif"
+            className="pagal-gif animated-element"
+          />
         </div>
       </div>
       <div className="right-comp">
@@ -1106,7 +1122,7 @@ const Bento = () => {
               <stop offset="0.664949" stopColor="#F20790" />
               <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
             </linearGradient>
-            <linearGradient
+            {/* <linearGradient
               id="paint1_linear_7183_7015"
               x1="-6.00005"
               y1="10.5"
@@ -1131,7 +1147,7 @@ const Bento = () => {
                 dur="12s"
                 repeatCount="indefinite"
               />
-            </linearGradient>
+            </linearGradient> */}
             <linearGradient
               id="paint2_linear_7183_7015"
               x1="293.309"
