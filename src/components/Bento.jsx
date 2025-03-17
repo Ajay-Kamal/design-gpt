@@ -11,8 +11,7 @@ const Bento = () => {
   return (
     <div className="bento">
       <div ref={ref} className="left-comp">
-        <svg
-          className="left-top"
+        <svg className="left-top"
           width="702"
           height="108"
           viewBox="0 0 702 108"
@@ -166,7 +165,7 @@ const Bento = () => {
               <stop offset="0.664949" stopColor="#F20790" />
               <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
             </linearGradient>
-              <linearGradient
+             {inView&&( <linearGradient
                 id="paint1_linear_7183_7015"
                 x1="-6.00005"
                 y1="10.5"
@@ -177,14 +176,13 @@ const Bento = () => {
                   <stop stopColor="#0D77FB" />
                   <stop offset="0.664949" stopColor="#F20790" />
                   <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
-                  {inView && (
-                    <animateTransform
+                  {inView&&(
+                   <animateTransform
                     attributeName="gradientTransform"
                     type="translate"
                     keyTimes="0; 0.2; 0.5; 1"
                     values="-800 0; -800 0; 200 0; 200 0"
                     dur="12s"
-                    begin='0s'
                     repeatCount="indefinite"
                     // attributeName="gradientTransform"
                     // type="translate"
@@ -193,7 +191,7 @@ const Bento = () => {
                     // dur="10s"
                     // repeatCount="indefinite"
                   />)}
-              </linearGradient>
+              </linearGradient>)}
             <linearGradient
               id="paint2_linear_7183_7015"
               x1="293.309"
@@ -237,8 +235,7 @@ const Bento = () => {
             <img src="/total-circles.svg" alt="" />
           </div>
         </div>
-        <svg
-          className="left-bottom"
+        <svg className="left-bottom"
           width="701"
           height="108"
           viewBox="0 0 701 108"
@@ -392,6 +389,7 @@ const Bento = () => {
               <stop offset="0.664949" stopColor="#F20790" />
               <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
             </linearGradient>
+            { inView && (
             <linearGradient
               id="paint1_linear_7183_7268"
               x1="-6.00005"
@@ -403,7 +401,7 @@ const Bento = () => {
               <stop offset="0.001" stopColor="#0D77FB" />
               <stop offset="0.3" stopColor="#FF009A" />
               <stop offset="1" stopColor="#FF009A00" />
-              <animateTransform
+               <animateTransform
                 attributeName="gradientTransform"
                 type="translate"
                 keyTimes="0; 0.2; 0.5; 1"
@@ -411,7 +409,7 @@ const Bento = () => {
                 dur="12s"
                 repeatCount="indefinite"
               />
-            </linearGradient>
+            </linearGradient>)}
             <linearGradient
               id="paint2_linear_7183_7268"
               x1="291.831"
@@ -965,8 +963,7 @@ const Bento = () => {
         </div>
       </div>
       <div className="right-comp">
-        <svg
-          className="right-top"
+        <svg className="right-top"
           width="702"
           height="108"
           viewBox="0 0 702 108"
@@ -1217,8 +1214,7 @@ const Bento = () => {
             </div>
           </div>
         </div>
-        <svg
-          className="right-bottom"
+        <svg className="right-bottom"
           width="701"
           height="108"
           viewBox="0 0 701 108"

@@ -9,11 +9,11 @@ const TeamCard = ({ props }) => {
           <div className="emoji-wrapper"></div>
           <div className="info-container">
             <span className="profile-name">Naam</span>
-            <span className="profile-status">Seeking an opportunity</span>
+            <span className="profile-status">Seeking for an opportunity</span>
           </div>
         </div>
         <img src="/teamcard-Bg.svg" alt="card" className="profile-background" id="profileBg" />
-        <img src="/teamcard-Nancy.svg" alt="profile top" className="profile-top" />
+        <img src="/teamcard-Na ncy.svg" alt="profile top" className="profile-top" />
       </div>
       <div className="icon-wrapper">
         <div className="inner-icon">
