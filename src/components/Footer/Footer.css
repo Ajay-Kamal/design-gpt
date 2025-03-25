@@ -1,0 +1,167 @@
+
+
+.eyes{
+  width: 129px;
+  height: 58px;
+  position: absolute;
+  bottom: -160%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  z-index: 4;
+}
+
+.machines-container {
+  width: 467px;
+  height: 525px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.machine, .machine2, .machine3 {
+  width: 467px;
+  height: 525px;
+  position: relative;
+  margin-bottom: -525px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  display: flex;
+  opacity: 0;
+  overflow-y: hidden;
+  visibility: hidden;
+  will-change: opacity, visibility, transform;
+  z-index: 1;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0s;
+}
+
+.machine.visible, .machine2.visible, .machine3.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.machine:not(.visible), .machine2:not(.visible), .machine3:not(.visible) {
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0s 0.8s;
+}
+
+.machine {
+  z-index: 3;
+}
+
+.machine2 {
+  z-index: 2;
+}
+
+.machine3 {
+  z-index: 1;
+}
+
+/*.machine.freeze , .machine2.freeze , .machine3.freeze, .eyes.freeze{
+  position: fixed;
+  bottom: 0;
+}*/
+
+.machine, .machine2, .machine3, .machine4, .eyes {
+  will-change: transform;
+  transition: transform 0.8s ease-in-out;
+}
+
+.machine4 {
+  position: relative;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  background: transparent;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 4;
+  will-change: opacity, visibility, transform;
+  width: 510px;
+  height: 590px;
+  overflow-y: hidden;
+  box-shadow: none;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0s;
+}
+
+.machine4.fade-in {
+  opacity: 1;
+  visibility: visible;
+  box-shadow: none;
+}
+
+.machine4.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0s 0.8s;
+}
+
+@keyframes fadeAnimation {
+  0% { opacity: 0; visibility: hidden; }
+  10% { opacity: 1; visibility: visible; }
+  40% { opacity: 1; visibility: visible; }
+  50% { opacity: 0; visibility: hidden; }
+  60% { opacity: 0; visibility: hidden; } 
+  100% { opacity: 0; visibility: hidden; } 
+}
+
+.design {
+  position: absolute;
+  bottom: -165%;
+  left: calc(50% - 750px); /* Adjusting left placement with spacing */
+  width: 567px;
+  height: 150px;
+  margin-right: 100px; /* Added spacing */
+}
+
+.crazy {
+  position: absolute;
+  bottom: -165%;
+  right: calc(50% - 750px); /* Adjusting right placement with spacing */
+  width: 567px;
+  height: 150px;
+  margin-left: 100px; /* Added spacing */
+}
+
+.design.freeze {
+  position: fixed;
+  bottom: 0;
+}
+
+.crazy.freeze {
+  position: fixed;
+  bottom: 0;
+}
+
+.fixed-position {
+  position: fixed;
+}
+
+.vid {
+  position: relative;
+  bottom: -165px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 309px;
+  height: 309px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s step-end;
+  z-index: 5;
+}
+
+.vid.visible {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}

@@ -18,8 +18,8 @@ const Card = ({ props }) => {
         </div>
       </div>
       <div className="text-wrapper">
-        <div className="main-heading">{props.head}</div>
-        <div className="paragraph-text">{props.para}</div>
+        <div className="main-heading"><p>{props.head}</p></div>
+        <div className="paragraph-text"><p>{props.para}</p></div>
         <img src="Arrow-final.svg" alt="" className="arrow" />
       </div>
     </div>

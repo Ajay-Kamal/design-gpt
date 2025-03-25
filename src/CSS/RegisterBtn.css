@@ -1,0 +1,118 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Keyframes for smooth rotation */
+@keyframes rotate-gradient {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+/* Register Button */
+.register {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+  width: 156px;
+  height: 52px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 0px 22px 0.95px rgba(236, 9, 146, 0.48);
+  backdrop-filter: blur(11px);
+  border: none;
+  cursor: pointer;
+}
+
+/* Animated Rotating Border */
+.register::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 3px; /* Border thickness */
+
+  /* Adjusted Gradient border animation */
+  background: conic-gradient(
+    from var(--angle),
+    #f20790 0deg 100deg,
+    /* Increase Pink */ #007aff 160deg 260deg,
+    /* Increase Blue */ #f20790 320deg 360deg /* Ensure Smooth Transition */
+  );
+
+  /* Mask to show only the border */
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: exclude;
+
+  /* Apply rotation animation */
+  animation: rotate-gradient 6s linear infinite;
+}
+
+/* Black Text */
+.register span {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: black; /* Keeps text fully black */
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Shine Effect Inside Text */
+.register span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 154, 0) 0%,
+    /* Transparent Start */ rgba(255, 0, 154, 0.8) 40%,
+    /* Soft Pink */ rgba(0, 122, 255, 1) 60%,
+
+    /* Soft Pink */ rgba(255, 0, 154, 0) 100% /* Transparent End */
+  );
+  mix-blend-mode: lighten; /* Ensures the shine only affects the text */
+  animation: textShine 4s linear infinite;
+}
+
+/* Animation for Shine Effect */
+@keyframes textShine {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* Centering the text inside the button */
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover Effect - Change Text Color to Gradient */
+.register:hover span {
+  background: linear-gradient(90deg, #f20790, #007aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Stop the Shine Animation on Hover */
+.register:hover span::after {
+  animation-play-state: paused;
+}

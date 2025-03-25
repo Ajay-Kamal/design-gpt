@@ -4,7 +4,7 @@ import "../CSS/Name.css";
 const Name = () => {
   return (
     <div className="name-comp">
-      <p className="head">Design Ai</p>
+      <p className="head">Loco Ai</p>
       <p className="para">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
         repellendus cum beatae eligendi inventore recusandae blanditiis alias

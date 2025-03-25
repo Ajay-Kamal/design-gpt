@@ -30,7 +30,7 @@
 .profile-top {
   position: absolute;
   top: 9.5px;
-  left: 15px;
+  left: 10px;
   width: 227px;
   height: 300px;
   object-fit: cover;
@@ -113,13 +113,16 @@
   position: absolute;
   left: 16px;
   top: 12px;
-  transition: transform 0.5s ease, opacity 0.3s ease;
   opacity: 0;
+  transition: transform 0.5s ease, opacity 0.3s ease;
 }
 
 .icon-colored-circle {
   position: absolute;
   opacity: 0;
+  left: 0.8px;
+  top: 2px;
+  transform: scale(1.2);
   animation: fade-in 0.5s ease forwards;
   animation-delay: 1.3s;
 }
@@ -146,9 +149,9 @@
 
 .icon-wrapper:hover .icon-arrow {
   display: block;
-  opacity: 1;
-  transform: translate(14px, -14px);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translate(10px, -10px);
+  transition: transform 0.2s ease, opacity 0.5s ease;
 }
 
 .icon-wrapper:hover .icon-colored-circle {
@@ -160,7 +163,11 @@
   width: 40px;
   height: 40px;
   z-index: 6;
+}
+
+.icon-wrapper:hover .icon-circle {
   transform: scale(1.2);
+  transition: transform 0.5s ease;
 }
 
 .profile-box {

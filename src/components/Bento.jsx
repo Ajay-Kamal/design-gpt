@@ -1,15 +1,24 @@
 import "../CSS/Bento.css";
 import { useInView } from "react-intersection-observer";
+import { useStatus } from "./StatusProvider";
 import React, { useEffect, useRef, useState } from "react";
 
 const Bento = () => {
+
+  const { setStatus } = useStatus();
+
   const { ref, inView } = useInView({
     triggerOnce: true, // Only trigger once
     threshold: 0.9, // Percentage of the component visible to trigger
   });
 
   return (
-    <div className="bento">
+    <div className="bento" onMouseEnter={() =>
+      setStatus({ text: "Bento:", subText: "Macintosh Chhotu activated" })
+    }
+    onMouseLeave={() =>
+      setStatus({ text: "Welcome", subText: "Home" })
+    }>
       <div ref={ref} className="left-comp">
         <svg className="left-top"
           width="702"

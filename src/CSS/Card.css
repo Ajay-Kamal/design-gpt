@@ -139,6 +139,10 @@
   margin-left: 20px;
 }
 
+.main-heading p{
+  text-decoration: none;
+}
+
 .paragraph-text {
   height: auto;
   align-self: stretch;
@@ -155,6 +159,10 @@
   margin-right: 20px;
   margin-left: 20px;
   margin-bottom: 20px;
+}
+
+.paragraph-text p{
+  text-decoration: none;
 }
 
 .arrow {

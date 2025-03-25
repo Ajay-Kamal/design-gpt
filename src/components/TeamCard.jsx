@@ -3,17 +3,17 @@ import "../CSS/TeamCard.css";
 
 const TeamCard = ({ props }) => {  
   return (
-    <div className="profile-container">
+    <a className="profile-container" href={props.link} target="_blank">
       <div className="profile-frame">
         <div className="profile-box">
           <div className="emoji-wrapper"></div>
           <div className="info-container">
-            <span className="profile-name">Naam</span>
+            <span className="profile-name">{props.name}</span>
             <span className="profile-status">Seeking for an opportunity</span>
           </div>
         </div>
         <img src="/teamcard-Bg.svg" alt="card" className="profile-background" id="profileBg" />
-        <img src="/teamcard-Na ncy.svg" alt="profile top" className="profile-top" />
+        <img src={props.pic} alt={props.pic} className="profile-top" />
       </div>
       <div className="icon-wrapper">
         <div className="inner-icon">
@@ -25,7 +25,7 @@ const TeamCard = ({ props }) => {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 

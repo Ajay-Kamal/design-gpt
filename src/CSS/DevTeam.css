@@ -15,6 +15,16 @@
   flex-direction: column;
 }
 
+.dev-team-members {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 32px;
+  margin-bottom: 124px;
+}
+
 .dev-team-head{
   display: flex;
   align-items: center;

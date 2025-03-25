@@ -1,0 +1,95 @@
+.tree {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.tree-node {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+
+.tree-node-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tnh-sec {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.tnh-sec img {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tnh-sec p {
+  display: -webkit-box;
+  width: 180px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: var(--Text-Primary-TextColor, #191919);
+  text-overflow: ellipsis;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.tree-arrow {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tree-node-children {
+  display: flex;
+  padding: 8px;
+  flex-direction: column;
+  border-radius: 6px;
+  align-items: center;
+  gap: 8px;
+}
+
+.tree-node-children div {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  border-radius: 6px; 
+  gap: 8px;
+}
+
+.tree-node-children div p {
+  display: -webkit-box;
+  width: 180px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: var(--Text-Secondary-TextColor, rgba(25, 25, 25, 0.6));
+  text-overflow: ellipsis;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

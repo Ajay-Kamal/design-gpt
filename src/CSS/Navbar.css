@@ -1,10 +1,11 @@
 .nav-bar {
-  position: sticky;
-  z-index: 1;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
   display: flex;
   width: 100%;
   height: auto;
-  padding: 20px 5%;
+  padding: 0px 5%;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
@@ -33,46 +34,12 @@
   display: none; /* Hide by default on smaller screens */
 }
 
-.register {
-  width: 126px;
-  height: 45px;
-  background-color: white;
-  border-radius: 24px;
-  position: relative;
-  border: none;
-  z-index: 2;
-  cursor: pointer;
-}
 
-.register::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  right: -1px;
-  bottom: -1px;
-  border-radius: inherit;
-  padding: 1.5px;
-  background: linear-gradient(270deg, #f20790 15%, #fff, #0877fc 85%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-}
-
-.register p {
-  color: #000;
-  font-family: Poppins;
-  font-size: 0.8rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
 
 /* Media Queries for Responsiveness */
 @media (min-width: 768px) {
   .nav-bar {
-    padding: 20px 40px;
+    padding: 0px 40px;
   }
 
   .dynamic-island {
@@ -95,7 +62,7 @@
 
 @media (max-width: 480px) {
   .nav-bar {
-    padding: 15px 20px;
+    padding: 0px 20px;
   }
 
   .logo img {
@@ -109,3 +76,140 @@
     font-size: 12px;
   }
 }
+
+.dynamic-island-landing {
+  position: relative; /* Ensures the button can be positioned absolutely inside it */
+}
+
+.union {
+  display: block; /* Ensures the image behaves as a block element */
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Maintains aspect ratio */
+  fill: linear-gradient(
+    223deg,
+    rgba(247, 245, 254, 0.75) 11.31%,
+    rgba(236, 240, 255, 0.75) 79.39%,
+    rgba(255, 234, 255, 0.75) 94.01%
+  );
+  stroke-width: 1px;
+  stroke: #fff;
+  filter: drop-shadow(0px 0px 22px rgba(243, 134, 249, 0.18));
+}
+
+.navbar-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 9%;
+  width: 90%;
+  margin: auto;
+  gap: 4px;
+}
+
+.navbar-center-text {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.navbar-side-text {
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  background: linear-gradient(91deg, #f20790 0.59%, #007aff 99.47%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-button-bg {
+  display: flex;
+  padding: 2px;
+  height: 58px;
+  width: 58px;
+  align-items: center;
+  border-radius: var(
+    --full-radius,
+    1000px
+  ); /* Uses a large value for a pill shape */
+  background: linear-gradient(
+    90deg,
+    rgba(242, 7, 144, 0.3) 0%,
+    rgba(0, 122, 255, 0.3) 100%
+  );
+  border: none; /* Removes default button border */
+  position: absolute; /* Positions the button on top of the image */
+  top: 28px; /* Adjust as needed to position vertically */
+  left: 28px; /* Adjust as needed to position horizontally */
+  z-index: 2; /* Ensures the button is above the image */
+}
+.home-button {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  justify-content: center; /* Centers the content horizontally and vertically */
+  height: 52px; /* Equal height */
+  width: 52px; /* Equal width */
+  border-radius: 50%; /* Makes the button a perfect circle */
+  background: linear-gradient(90deg, #f20790 0%, #007aff 100%);
+  box-shadow: -0.4px -0.2px 0px 0px rgba(255, 255, 255, 0.08) inset,
+    0.4px 0.4px 0px 0px rgba(255, 255, 255, 0.16) inset,
+    -2px -2px 3px 0px rgba(15, 15, 15, 0.24) inset,
+    1px 1px 3px 0px rgba(255, 255, 255, 0.24) inset;
+  border: none; /* Removes default button border */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  position: absolute; /* Positions the button on top of the image */
+  left: 3px;
+  z-index: 2; /* Ensures the button is above the image */
+  overflow: hidden; /* Hides the overflow of the pseudo-element */
+}
+
+/* Pseudo-element for the loading effect */
+.home-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Matches the button's circular shape */
+  background: conic-gradient(
+    transparent 0%,
+    rgba(255, 255, 255, 0.8) 15%,
+    transparent 30%
+  ); /* Creates a thin white conic gradient */
+  mask: radial-gradient(
+    circle,
+    transparent 63%,
+    black 60% 100%
+  ); /* Masks the inner part of the gradient, leaving a 10px-wide strip */
+  animation: rotateLoading 3s linear infinite; /* Continuous rotation animation */
+}
+
+/* Keyframes for the rotating loading effect */
+@keyframes rotateLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.home-button img {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  justify-content: center;
+  align-items: center;
+}
+
