@@ -24,46 +24,43 @@ const Footer = () => {
 
   return (
     <div className="content">
-      <p>Scroll down...</p>
-      <div >
+      <img
+        src="./footer-DESIGN.svg"
+        alt=""
+        className={`design ${visible ? "freeze" : ""}`}
+      />
+      <img
+        src="./footer-CRAZY.svg"
+        alt=""
+        className={`crazy ${visible ? "freeze" : ""}`}
+      />
+      <div className="machine-part">
         <img
-          src="./footer-DESIGN.svg"
+          src="./footer-Footer.gif"
           alt=""
-          className={`design ${visible ? "freeze" : ""}`}
+          className={`vid ${visible ? "visible" : ""}`}
         />
         <img
-          src="./footer-CRAZY.svg"
+          src="./footer-MACHINE1.svg"
           alt=""
-          className={`crazy ${visible ? "freeze" : ""}`}
+          className={`machine ${visible ? "freeze" : "visible"}`}
         />
-        <div className="machine-part">
-          <img
-            src="./footer-Footer.gif"
-            alt=""
-            className={`vid ${visible ? "visible" : ""}`}
-          />{" "}
-          <img
-            src="./footer-MACHINE1.svg"
-            alt=""
-            className={`machine ${visible ? "freeze" : "visible"}`}
-          />
-          <img
-            src="./footer-MACHINE2.svg"
-            alt=""
-            className={`machine2 ${visible ? "freeze" : "visible"}`}
-          />
-          <img
-            src="./footer-Machine3.svg"
-            alt=""
-            className={`machine3 ${visible ? "freeze" : "visible"}`}
-          />
-          <img
-            src="./footer-MACHINE4.svg"
-            alt=""
-            className={`machine4 ${visible ? "fade-in" : "fade-out"}`}
-          />
-          <img src="./footer-Eyes.svg" alt="" className="eyes" />
-        </div>
+        <img
+          src="./footer-MACHINE2.svg"
+          alt=""
+          className={`machine2 ${visible ? "freeze" : "visible"}`}
+        />
+        <img
+          src="./footer-Machine3.svg"
+          alt=""
+          className={`machine3 ${visible ? "freeze" : "visible"}`}
+        />
+        <img
+          src="./footer-MACHINE4.svg"
+          alt=""
+          className={`machine4 ${visible ? "fade-in" : "fade-out"}`}
+        />
+        <img src="./footer-Eyes.svg" alt="" className="eyes" />
       </div>
     </div>
   );

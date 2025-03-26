@@ -29,6 +29,10 @@
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out, visibility 0s;
 }
 
+.machine-part{
+  
+}
+
 .machine.visible, .machine2.visible, .machine3.visible {
   opacity: 1;
   visibility: visible;
@@ -65,9 +69,6 @@
 .machine4 {
   position: relative;
   bottom: 45px;
-  left: 50%;
-  transform: translateX(-50%);
-  transform: translateY(-50%);
   background: transparent;
   opacity: 0;
   visibility: hidden;
@@ -102,7 +103,7 @@
 }
 
 .design {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: calc(50% - 750px); /* Adjusting left placement with spacing */
   width: 567px;
@@ -111,8 +112,8 @@
 }
 
 .crazy {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: 0;  
   right: calc(50% - 750px); /* Adjusting right placement with spacing */
   width: 567px;
   height: 150px;
@@ -135,7 +136,7 @@
 
 .vid {
   position: relative;
-  bottom: -165px;
+  bottom: -365px;
   left: 50%;
   transform: translateX(-50%);
   width: 309px;
