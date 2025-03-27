@@ -1,9 +1,9 @@
 @font-face {
   font-family: "Bohemian"; /* Give your font a name */
-  src: url("/fonts/Bohemian Soul.woff2") format("woff2"),
-    /* Path to the font file */ url("/fonts/Bohemian Soul.woff") format("woff"); /* Fallback for older browsers */
+  src: url("/fonts/Bohemian Soul .woff2") format("woff2"),
+    /* Path to the font file */ url("/fonts/Bohemian Soul .woff") format("woff"); /* Fallback for older browsers */
   font-weight: normal; /* Specify the font weight */
-  font-style: normal; /* Specify the font style */
+  font-style: normal; /* Specify the font style */  
 }
 
 .des-team {
@@ -72,7 +72,7 @@
 }
 
 .dt-content span {
-  background: linear-gradient(90deg, #f20790 23.23%, #007aff 43.22%);
+  background: linear-gradient(90deg, #f20790 23.23%, #007aff 90.22%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

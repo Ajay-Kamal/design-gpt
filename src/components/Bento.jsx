@@ -962,7 +962,7 @@ const Bento = () => {
           <img
             src="/Eyes-Closed.svg"
             alt=""
-            className="eyes-closed animated-element"
+            className="eyes-close animated-element"
           />
           <img src="/Eyes-Open.svg" className="eyes-opened animated-element" />
           <img

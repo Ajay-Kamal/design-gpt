@@ -18,13 +18,14 @@
   transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
-.profile-frame:hover .profile-background {
-  content: url("teamcard-bgcheck.svg");
-}
+
 
 .profile-background {
   width: 227px;
   height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
 }
 
 .profile-top {
