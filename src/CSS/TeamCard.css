@@ -18,8 +18,6 @@
   transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
-
-
 .profile-background {
   width: 227px;
   height: 300px;
@@ -34,14 +32,19 @@
   left: 10px;
   width: 227px;
   height: 300px;
+  opacity: 1;
   object-fit: cover;
   z-index: 2;
   transition: opacity 0.3s ease;
 }
 
-.profile-frame:hover .profile-top {
+.profile-container:hover .profile-top {
   opacity: 0;
   pointer-events: none;
+}
+
+.icon-wrapper:hover .profile-top{
+  opacity: 0;
 }
 
 .icon-wrapper {

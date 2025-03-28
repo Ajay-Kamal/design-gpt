@@ -18,7 +18,7 @@ const CardBlock = () => {
               setStatus({ text: "Product: ", subText: card.subText })
             }
             onMouseLeave={() =>
-              setStatus({ text: "Welcome", subText: "Home" })
+              setStatus({ text: "Welcome Home", subText: "" })
             }
           >
             <Link to={card.link}>

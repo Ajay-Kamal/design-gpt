@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 import "../CSS/TeamCard.css";
+import { useStatus } from "./StatusProvider";
 
 const TeamCard = ({ props }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { setStatus } = useStatus();
 
   return (
     <a
       className="profile-container"
       href={props.link}
       target="_blank"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {setIsHovered(true);
+        setStatus({ text: "Developer: ", subText: props.name });
+      }}
+      onMouseLeave={() => {setIsHovered(false);
+        setStatus({ text: "Welcome Home", subText: "" });
+      }}
     >
       <div className="profile-frame">
         <div className="profile-box">

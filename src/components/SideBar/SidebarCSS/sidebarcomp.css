@@ -11,12 +11,11 @@
 
 .comp-btn {
   display: flex;
-  width: 48px;
-  height: 48px;
-  padding: var(--spacing-padding-4, 4px) 0px;
+  width: 3rem;
+  height: 3rem;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   border-radius: var(--BorderRadius-Core-6, 6px);
   background-color: #191919;
   outline: none;
@@ -48,4 +47,3 @@
   font-weight: 500;
   line-height: 14px; /* 127.273% */
 }
-

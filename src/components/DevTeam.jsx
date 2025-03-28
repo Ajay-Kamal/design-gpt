@@ -1,7 +1,6 @@
 import React from "react";
 import "../CSS/DevTeam.css";
 import TeamCard from "./TeamCard";
-import { useStatus } from "./StatusProvider.jsx";
 
 const DevTeam = () => {
 

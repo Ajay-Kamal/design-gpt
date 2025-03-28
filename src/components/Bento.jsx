@@ -17,7 +17,7 @@ const Bento = () => {
       setStatus({ text: "Bento:", subText: "Macintosh Chhotu activated" })
     }
     onMouseLeave={() =>
-      setStatus({ text: "Welcome", subText: "Home" })
+      setStatus({ text: "Welcome Home", subText: "" })
     }>
       <div ref={ref} className="left-comp">
         <svg className="left-top"
