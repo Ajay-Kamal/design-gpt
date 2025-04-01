@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   z-index: 899;
-  background: linear-gradient(180deg, #87CEEB 0%, #ffffff 100%);
+  background: linear-gradient(180deg, rgb(123, 185, 247) 0%, #ffffff 100%);
   border-radius: 1.5rem 1.5rem 0 0;
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.1);
   /* Removed transform properties as they're no longer needed */
