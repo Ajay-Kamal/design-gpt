@@ -185,6 +185,7 @@ const SignUp = () => {
             </div>
           </section>
         </section>
+        <img src="./signup-clouds.svg" alt="clouds" className="clouds" />
         <button className="sign-up-exit" onClick={handleExitClick}>
           <img src="./x-icon.svg" alt="back" />
         </button>

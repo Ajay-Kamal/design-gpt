@@ -436,3 +436,10 @@ ul li::before {
   flex-shrink: 0;
   border-radius: 62.5rem;
 }
+
+.clouds{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
