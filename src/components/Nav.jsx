@@ -2,6 +2,7 @@ import React from "react";
 import { useStatus } from "./StatusProvider";
 import "../CSS/Navbar.css";
 import RegisterBtn from "./RegisterBtn";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const { status } = useStatus();
@@ -23,7 +24,7 @@ const Nav = () => {
           </button>
         </div>
       </div>
-      <RegisterBtn />
+      <RegisterBtn/>
     </div>
   );
 };

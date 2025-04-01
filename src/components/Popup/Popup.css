@@ -1,0 +1,311 @@
+.popup {
+  width: 94vw;
+  height: 87vh;
+  position: fixed; /* Changed from relative to fixed */
+  bottom: 0;
+  right: 0;
+  z-index: 899;
+  background: linear-gradient(180deg, #87CEEB 0%, #ffffff 100%);
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.1);
+  /* Removed transform properties as they're no longer needed */
+}
+
+.popup-chatbox {
+  height: 144px;
+  position: absolute;
+  bottom: 25%;
+  left: 7%;
+  opacity: 1; /* Ensure it's visible */
+  animation-delay: 30s; /* Start after stars and line disappear (1s delay for background change + 1s for stars/line animation) */
+  transition: top 1s ease-in-out;
+}
+
+.popup-chatbox.visible {
+  opacity: 1;
+}
+
+.popup-chat-box1 {
+  position: relative;
+  width: 1002px;
+  min-height: 144px; /* Minimum height */
+  max-height: 400px; /* Set a reasonable max height */
+  flex-shrink: 0;
+  border-radius: 24px;
+  padding-top: 10px;
+  left: 15%;
+  top: 70%;
+  background-color: white;
+  display: flex;
+  flex-direction: column; /* Allows expansion */
+  overflow: hidden; /* Prevents extra scrolling */
+  transition: max-height 0.3s ease-in-out; /* Smooth transition */
+  border: 1.5px solid rgba(228, 228, 228, 0.5);
+}
+
+.popup-chat-box1::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Cover full box */
+  border-radius: inherit; /* Same as parent */
+  padding: 1.5px; /* Border thickness */
+  background: linear-gradient(90deg, #f20790, #007aff);
+  -webkit-mask: linear-gradient(white 0 0) content-box,
+    linear-gradient(white 0 0);
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0; /* Initially hidden */
+  z-index: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show moving border on hover */
+.popup-chat-box1:hover::before {
+  opacity: 1;
+  animation: movingBorder 8s infinite linear;
+}
+
+/* Keyframes for Moving Gradient */
+@keyframes movingBorder {
+  0% {
+    background: linear-gradient(90deg, #f20790, #007aff);
+  }
+  25% {
+    background: linear-gradient(180deg, #f20790, #007aff);
+  }
+  50% {
+    background: linear-gradient(270deg, #f20790, #007aff);
+  }
+  75% {
+    background: linear-gradient(360deg, #f20790, #007aff);
+  }
+  100% {
+    background: linear-gradient(90deg, #f20790, #007aff);
+  }
+}
+
+.chat-box-icon {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.popup-chat-input {
+  width: 90%; /* Adjust width to avoid overflow */
+  border: none;
+  outline: none;
+  padding: 20px;
+  color: var(--Text-Primary-TextColor, #191919);
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  resize: none; /* Prevents manual resizing */
+  overflow-y: auto; /* Enables scrolling for longer text */
+  white-space: normal; /* Allows text wrapping */
+  word-wrap: break-word; /* Ensures words do not overflow */
+  background-color: transparent;
+  margin-left: 40px;
+  margin-top: -50px;
+  margin-bottom: 15px;
+}
+
+/* Fix placeholder overflow issue */
+.popup-chat-input::placeholder {
+  color: var(--Text-Teritary-Text-Color, rgba(25, 25, 25, 0.5));
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.popup-chat-box2 {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 4px;
+  width: 1000px;
+  height: 62px;
+  left: 15.25%;
+  top: 25.2%;
+  margin-right: 20px;
+  border-top: 1px solid rgba(250, 250, 250, 0.1);
+  border-radius: 0px 0px 24px 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(209, 215, 219, 0) 0%,
+    #fff 2%,
+    #fcfcfc 70%,
+    #f1f3f4 100%
+  );
+}
+
+.popup-attachment {
+  font-family: Poppins, sans-serif;
+  position: relative;
+  right: 20px;
+  width: 135px;
+  height: 40px;
+  border-radius: 24px;
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(180deg, #fff 0%, #f5f5f5 100%);
+  box-shadow: 0px 6px 6px -3px rgba(70, 70, 70, 0.04),
+    0px 16px 16px -8px rgba(70, 70, 70, 0.04);
+  border: 1px solid rgba(228, 228, 228, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: visible; /* Add this to ensure the upload image shows */
+}
+
+/* Default image styling */
+.popup-attachment .popup-default-img {
+  width: 20px;
+  height: 20px;
+  display: block; /* Change to block */
+  position: relative; /* Add this */
+  z-index: 1; /* Add this */
+}
+
+/* Hover image styling */
+.popup-attachment .popup-hover-img {
+  width: 20px;
+  height: 20px;
+  display: none;
+  position: absolute;
+  left: 12px;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  z-index: 2; /* Add this */
+}
+
+/* Upload image styling */
+.popup-attachment .popup-uploadimage {
+  display: none;
+  position: absolute;
+  left: -220px;
+  top: -80px;
+  z-index: 100;
+  pointer-events: none; /* Add this to prevent interference */
+}
+
+/* Text styling */
+.popup-attachment span {
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #191919;
+  position: relative; /* Add this */
+  z-index: 1; /* Add this */
+}
+
+/* Hover states */
+.popup-attachment:hover {
+  font-family: Poppins, sans-serif;
+  position: relative;
+  width: 135px;
+  height: 40px;
+  border-radius: 24px;
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(
+      178deg,
+      #fff 1.76%,
+      rgba(255, 193, 229, 0.3) 101.87%
+    ),
+    #fff;
+  border: 1px solid rgba(242, 7, 144, 0.1);
+  box-shadow: 0px 6px 6px -3px rgba(70, 70, 70, 0.04),
+    0px 16px 16px -8px rgba(70, 70, 70, 0.04), 0px 5px 5px 0px #fff inset,
+    0px -4px 3px 0px #d9eaff inset, 0px -10px 18px 0px #c3deff inset;
+}
+
+.popup-attachment:hover .popup-default-img {
+  display: none !important; /* Add !important */
+}
+
+.popup-attachment:hover .popup-hover-img {
+  display: block !important; /* Add !important */
+}
+
+.popup-attachment:hover .popup-uploadimage {
+  display: block !important; /* Add !important */
+}
+
+.popup-attachment:hover span {
+  margin-left: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  background: linear-gradient(92deg, #ff009a -0.57%, #0877fc 99.15%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.popup-attachment-line {
+  width: 2px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.2); /* Light gray line */
+  margin: 0 8px; /* Add margin to center the line between the buttons */
+  position: relative;
+  right: 20px;
+}
+
+@keyframes borderPulse {
+  0% {
+    inset: -2px;
+  }
+  50% {
+    inset: -4px;
+  }
+  100% {
+    inset: -2px;
+  }
+}
+
+.popup-send-btn {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  padding: 12px;
+  right: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative; /* Needed for proper layering */
+  border: 0.1px solid transparent; /* Transparent border to avoid shifting */
+  background: linear-gradient(92deg, #f20790 1.88%, #007aff 94.66%);
+  box-shadow: 0px -6px 2px 0px rgba(0, 0, 0, 0.1) inset;
+  z-index: 2; /* Ensure button stays on top */
+}
+
+/* Gradient Border Effect Behind the Button */
+.popup-send-btn::before {
+  content: "";
+  position: absolute;
+  inset: -4px; /* Starting thickness */
+  border-radius: 50%;
+  background: linear-gradient(92deg, #f20790 1.88%, #007aff 94.66%);
+  z-index: -1; /* Send it behind */
+  opacity: 0.6;
+  animation: borderPulse 1.5s infinite ease-in-out;
+}
+
+.popup-sendicon {
+  width: 20px;
+  height: 20px;
+  align-items: center;
+}
