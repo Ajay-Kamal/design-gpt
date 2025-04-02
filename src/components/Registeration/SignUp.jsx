@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import SideBar from "../SideBar/SideBar";
 import "../Registeration/RegCSS/SignUp.css";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import RegNavBar from "./RegNavBar";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const handleExitClick = () => {
-    navigate(-1); // This will navigate to the previous page
+    navigate(-1);
   };
 
   const [formData, setFormData] = useState({
@@ -16,6 +16,7 @@ const SignUp = () => {
     email: "",
     password: "",
   });
+
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isPasswordRequirementsVisible, setIsPasswordRequirementsVisible] =
     useState(false);
@@ -58,7 +59,11 @@ const SignUp = () => {
           <section className="form-modal" style={{ height: formHeight }}>
             <div className="form-content">
               <header className="form-header">
-                <img src="./Signup-Vector.svg" alt="Signup Vector" />
+                <img
+                  src="./Signup-Vector.svg"
+                  alt="Signup Vector"
+                  className="signup-bgrid"
+                />
                 <div className="centre-icon">
                   <img
                     src="./signup-logo.svg"
@@ -179,7 +184,9 @@ const SignUp = () => {
                 </form>
                 <footer className="form-footer">
                   <p className="account-text">Already have an account?</p>
-                  <a className="signin-link">Sign in</a>
+                  <a className="signin-link">
+                    <Link to="/login">Sign in</Link>
+                  </a>
                 </footer>
               </section>
             </div>

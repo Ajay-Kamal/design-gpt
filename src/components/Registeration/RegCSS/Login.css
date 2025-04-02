@@ -1,0 +1,13 @@
+.forgot-button {
+  color: #191919;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 1rem */
+  border: none;
+  background: transparent;
+  position: relative;
+  margin: 0 auto;
+  cursor: pointer;
+}

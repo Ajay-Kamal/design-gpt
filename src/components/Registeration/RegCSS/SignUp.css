@@ -65,6 +65,14 @@
   display: flex;
 }
 
+.signup-bgrid{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
 .centre-icon {
   height: 3rem;
   width: 3rem;
@@ -311,6 +319,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  cursor: pointer;
 }
 .eye-icon {
   position: absolute;
