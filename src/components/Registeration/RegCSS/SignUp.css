@@ -65,9 +65,9 @@
   display: flex;
 }
 
-.signup-bgrid{
+.signup-bgrid {
   position: absolute;
-  top: 0;
+  top: -7.3rem;
   height: 100%;
   object-fit: cover;
   width: 100%;
@@ -446,9 +446,8 @@ ul li::before {
   border-radius: 62.5rem;
 }
 
-.clouds{
+.clouds {
   position: absolute;
   width: 100%;
   bottom: 0;
 }
-

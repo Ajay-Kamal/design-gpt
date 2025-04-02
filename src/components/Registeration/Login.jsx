@@ -7,7 +7,7 @@ import "./RegCSS/Login.css";
 const Login = () => {
   const navigate = useNavigate();
   const handleExitClick = () => {
-    navigate(-1); 
+    navigate(-1);
   };
 
   const [formData, setFormData] = useState({
@@ -49,7 +49,11 @@ const Login = () => {
           <section className="form-modal">
             <div className="form-content">
               <header className="form-header">
-                <img src="./Signup-Vector.svg" alt="Background Pattern" />
+                <img
+                  src="./Signup-Vector.svg"
+                  alt="Signup Vector"
+                  className="login-bgrid"
+                />
                 <div className="centre-icon">
                   <img
                     src="./signup-logo.svg"
