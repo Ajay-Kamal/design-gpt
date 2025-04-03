@@ -1,25 +1,25 @@
 .side-comp {
   display: flex;
-  width: 48px;
-  padding: var(--spacing-padding-0, 0px);
+  width: 2.5vw; /* Converted 48px to vw */
+  padding: var(--spacing-padding-0, 0vw); /* Converted 0px to vw */
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 0.208vw; /* Converted 4px to vw */
   position: relative;
-  border-radius: var(--BorderRadius-Core-0, 0px);
+  border-radius: var(--BorderRadius-Core-0, 0vw); /* Converted 0px to vw */
 }
 
 .comp-btn {
   display: flex;
-  width: 3rem;
-  height: 3rem;
+  width: 1.563vw; /* Converted 3rem (48px) to vw */
+  height: 1.563vw; /* Converted 3rem (48px) to vw */
   justify-content: center;
   align-items: center;
-  gap: 0.625rem;
-  border-radius: var(--BorderRadius-Core-6, 6px);
+  gap: 0.326vw; /* Converted 0.625rem (10px) to vw */
+  border-radius: var(--BorderRadius-Core-6, 0.313vw); /* Converted 6px to vw */
   background-color: #191919;
   outline: none;
-  border: 0px;
+  border: 0vw; /* Converted 0px to vw */
   cursor: pointer;
 }
 
@@ -42,8 +42,8 @@
   text-align: center;
   text-overflow: ellipsis;
   font-family: Poppins;
-  font-size: 11px;
+  font-size: 0.573vw; /* Converted 11px to vw */
   font-style: normal;
   font-weight: 500;
-  line-height: 14px; /* 127.273% */
+  line-height: 0.729vw; /* Converted 14px to vw */
 }

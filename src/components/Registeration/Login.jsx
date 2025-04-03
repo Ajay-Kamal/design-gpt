@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import RegNavBar from "./RegNavBar";
+import LogNavBar from "./LogNavBar";
 import SideBar from "../SideBar/SideBar";
 import { Link, useNavigate } from "react-router-dom";
 import "./RegCSS/Login.css";
@@ -42,7 +42,7 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <RegNavBar />
+      <LogNavBar />
       <SideBar />
       <main className="page-container">
         <section className="form-modal-cover">

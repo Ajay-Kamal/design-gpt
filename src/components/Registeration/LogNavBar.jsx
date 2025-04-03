@@ -1,7 +1,7 @@
 import React from "react";
 import "../Navbar/NavBar.css";
 
-const RegNavBar = () => {
+const LogNavBar = () => {
   return (
       <nav className="nav">
         <div className="act-nav">
@@ -18,7 +18,7 @@ const RegNavBar = () => {
           <div className="nav__center-circle"></div>
 
           <div className="nav__center-text" id="nav-text">
-             Sign up
+             Sign in
           </div>
 
           <div className="nav__dropsheet">
@@ -125,4 +125,4 @@ const RegNavBar = () => {
   );
 };
 
-export default RegNavBar;  
+export default LogNavBar;

@@ -8,6 +8,8 @@
   padding: 0px 5%;
   justify-content: space-between;
   align-items: center;
+  background: linear-gradient(180deg, rgba(253, 223, 242, 0.80) 52.58%, rgba(253, 223, 242, 0.00) 100%);
+  backdrop-filter: blur(4px);
   box-sizing: border-box;
 }
 

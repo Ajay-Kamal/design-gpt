@@ -8,8 +8,7 @@ const Name = () => {
       <p className="para">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
         repellendus cum beatae eligendi inventore recusandae blanditiis alias
-        omnis similique, perferendis earum vitae saepe labore illum ex. Delectus
-        corporis animi nulla.
+        omnis similique, perferendis earum vitae saepe labore illum ex.
       </p>
     </div>
   );

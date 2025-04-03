@@ -11,13 +11,14 @@
   padding: 0;
   margin: 0;
   margin-top:0;
+  width: 100%;
 }
 
 .head {
   align-self: stretch;
   text-align: center;
   font-family: "Bohemian";
-  font-size: 4rem; /* Use rem for scalable font size */
+  font-size: 44px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.2; /* Use unitless line-height for better scaling */
@@ -26,7 +27,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 8px auto; /* Center the text horizontally */
-  padding-bottom:3px; /* Add padding to prevent text from touching edges */
 }
 
 .para {
@@ -39,7 +39,6 @@
   font-weight: 400;
   line-height: 1.6; /* Use unitless line-height for better scaling */
   margin: 0 auto; /* Add margin for spacing */
-  padding: 0 1rem; /* Add padding to prevent text from touching edges */ /* Limit paragraph width for better readability */
 }
 
 /* Media Queries for Responsiveness */

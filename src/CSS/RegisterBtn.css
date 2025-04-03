@@ -83,7 +83,7 @@
   font-size: clamp(14px, 1.5vw, 16px);
   font-weight: 500;
   text-transform: capitalize;
-  color: black; /* Initially black text */
+  color: #191919; /* Initially black text */
   display: inline-block;
   overflow: hidden;
 }

@@ -67,7 +67,7 @@
 
 .signup-bgrid {
   position: absolute;
-  top: -7.3rem;
+  top: -7.2rem;
   height: 100%;
   object-fit: cover;
   width: 100%;
@@ -450,4 +450,26 @@ ul li::before {
   position: absolute;
   width: 100%;
   bottom: 0;
+}
+
+#firstname{
+  outline: none;
+}
+
+#firstname:focus{
+  outline: none; /* Remove default outline */
+  border-color: #007AFF; /* Use the ending color of the gradient for focus */
+  caret-color: #007AFF; /* Change caret color to the ending gradient color */
+}
+
+#lastname{
+
+}
+
+#email{
+
+}
+
+#password{
+
 }

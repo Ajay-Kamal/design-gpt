@@ -4,10 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 66vw;
   flex-direction: column;
   margin: 0 auto;
   position: relative;
   margin-top: -140px;
 }
 
+.svg-container svg{
+  width: 100%;
+  height: auto;
+}

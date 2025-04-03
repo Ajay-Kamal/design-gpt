@@ -111,7 +111,7 @@ const SignUp = () => {
                   <div className="stacked-inputs">
                     <div className="input-wrapper top-input">
                       <input
-                        type="text  "
+                        type="text"
                         id="email"
                         className="form-input"
                         value={formData.email}

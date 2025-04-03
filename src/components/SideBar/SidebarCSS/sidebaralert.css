@@ -1,32 +1,32 @@
 .side-comp {
   display: flex;
-  width: 48px;
-  padding: var(--spacing-padding-0, 0px);
+  width: 2.5vw; /* Converted 48px to vw */
+  padding: var(--spacing-padding-0, 0vw); /* Converted 0px to vw */
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  border-radius: var(--BorderRadius-Core-0, 0px);
+  gap: 0.208vw; /* Converted 4px to vw */
+  border-radius: var(--BorderRadius-Core-0, 0vw); /* Converted 0px to vw */
 }
 
 .comp-btn {
   display: flex;
-  width: 48px;
-  height: 48px;
-  padding: var(--spacing-padding-4, 4px) 0px;
+  width: 2.5vw; /* Converted 48px to vw */
+  height: 2.5vw; /* Converted 48px to vw */
+  padding: var(--spacing-padding-4, 0.208vw) 0vw; /* Converted 4px to vw */
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  border-radius: var(--BorderRadius-Core-6, 6px);
+  gap: 0.521vw; /* Converted 10px to vw */
+  border-radius: var(--BorderRadius-Core-6, 0.313vw); /* Converted 6px to vw */
   background-color: #191919;
   outline: none;
-  border: 0px;
+  border: 0vw; /* Converted 0px to vw */
   cursor: pointer;
 }
 
 .comp-btn img {
   display: flex;
-  width: 24px;
-  height: 24px;
+  width: 1.25vw; /* Converted 24px to vw */
+  height: 1.25vw; /* Converted 24px to vw */
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
@@ -42,30 +42,30 @@
   text-align: center;
   text-overflow: ellipsis;
   font-family: Poppins;
-  font-size: 11px;
+  font-size: 0.573vw; /* Converted 11px to vw */
   font-style: normal;
   font-weight: 500;
-  line-height: 14px; /* 127.273% */
+  line-height: 0.729vw; /* Converted 14px to vw */
 }
 
 .mesg-cnt {
   display: flex;
-  padding: 4px;
-  width: 20px;
-  height: 20px;
+  padding: 0.208vw; /* Converted 4px to vw */
+  width: 1.042vw; /* Converted 20px to vw */
+  height: 1.042vw; /* Converted 20px to vw */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 4px;
-  top: 3px;
-  border-radius: 100px;
+  right: 0.208vw; /* Converted 4px to vw */
+  top: 0.156vw; /* Converted 3px to vw */
+  border-radius: 5.208vw; /* Converted 100px to vw */
   background: #f50031;
   color: #FFF;
-text-align: center;
-font-family: Poppins;
-font-size: 12px;
-font-style: normal;
-font-weight: 600;
-line-height: 14px; /* 116.667% */
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.625vw; /* Converted 12px to vw */
+  font-style: normal;
+  font-weight: 600;
+  line-height: 0.729vw; /* Converted 14px to vw */
 }

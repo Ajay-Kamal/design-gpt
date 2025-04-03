@@ -448,6 +448,7 @@ const StarComp = () => {
             <stop offset="0.475" stopColor="#D7159E" />
             <stop offset="1" stopColor="#1F6CF2" />
           </linearGradient>
+          {/*Logo Background Gradient*/}
           <linearGradient
             id="paint18_linear_6879_25019"
             x1="508"
@@ -459,6 +460,14 @@ const StarComp = () => {
             <stop stopColor="#F20790" />
             <stop offset="0.606275" stopColor="#0E78FC" />
             <stop offset="0.97968" stopColor="#F20790" />
+            <animateTransform
+              attributeName="gradientTransform"
+              type="translate"
+              from="0 0"
+              to="0 100"
+              dur="10s"
+              repeatCount="indefinite"
+            />
           </linearGradient>
           <linearGradient
             id="paint19_linear_6879_25019"
