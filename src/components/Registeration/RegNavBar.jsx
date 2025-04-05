@@ -1,15 +1,22 @@
 import React from "react";
 import "../Navbar/NavBar.css";
+import { Link } from "react-router-dom";
 
 const RegNavBar = () => {
   return (
     <nav className="nav">
       <div className="act-nav">
-        <div className="nav__logo-container">
-          <img src="./navbar-dd-logo.svg" alt="dd-logo" className="nav__logo" />
-          <div className="nav__vertical-line"></div>
-          <span className="nav__name">Loco-ai</span>
-        </div>
+        <Link to="/">
+          <div className="nav__logo-container">
+            <img
+              src="./navbar-dd-logo.svg"
+              alt="dd-logo"
+              className="nav__logo"
+            />
+            <div className="nav__vertical-line"></div>
+            <span className="nav__name">Loco-ai</span>
+          </div>
+        </Link>
 
         <div className="nav__dynamic-island">
           <img
@@ -129,7 +136,7 @@ const RegNavBar = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="nav__home-button-bg">
             <button className="nav__home-button">
               <img

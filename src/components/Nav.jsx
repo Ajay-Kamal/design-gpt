@@ -9,9 +9,12 @@ const Nav = () => {
 
   return (
     <div className="nav-bar">
-      <div className="logo">
-        <img src="/Fav Logo.svg" alt="logo" />
-      </div>
+      <Link to="/">
+        <div className="logo">
+          <img src="/Fav Logo.svg" alt="logo" />
+        </div>
+      </Link>
+
       <div className="dynamic-island-landing">
         <img src="/navbarUnion.svg" alt="navbarUnion" className="union" />
         <div className="navbar-text">
@@ -24,7 +27,7 @@ const Nav = () => {
           </button>
         </div>
       </div>
-      <RegisterBtn/>
+      <RegisterBtn />
     </div>
   );
 };
