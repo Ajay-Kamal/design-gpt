@@ -1,0 +1,51 @@
+.dynamic-island{
+  height: 75%;
+  width: 40%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.di-union{
+ height: 110%;
+ width: 100%;
+ position: absolute;
+ top: 0;
+}
+
+.di-hover-rectangle{
+  display: flex;
+  width: 95%;
+  height: 68%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 6;
+  border-radius: var(--full-radius, 1000px);
+  background: #0d0d0d;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 4px 16px 0px rgba(0, 0, 0, 0.24), 0px 4px 16px 0px rgba(0, 0, 0, 0.24),
+    0px 3px 6px 0px rgba(70, 70, 70, 0.5) inset;
+}
+
+.di-movable-sec{
+  position: absolute;
+  left: 2.6%;
+  z-index: 7;
+  height: 100%;
+  width: fit-content;
+  background-color: aqua;
+}
+
+.di-hover-circle{
+  height: 100%; /* The height will define the size */
+  aspect-ratio: 1 / 1; /* Ensures the width is always equal to the height */
+  border-radius: 50%; /* Makes it a perfect circle */
+  background: #0d0d0d;
+  z-index: 8;
+  box-shadow:
+    0px 3px 6px 0px rgba(70, 70, 70, 0.5) inset;
+  clip-path: inset(0 9px 0 9px);
+}

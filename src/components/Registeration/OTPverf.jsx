@@ -82,7 +82,7 @@ const OTPverf = () => {
           <section className="otp-form-modal">
             <div className="otp-form-content">
               <header className="otp-form-header">
-                <img src="Signup-Vector.svg" alt="Signup Vector" />
+                <img src="Signup-Vector.svg" alt="Signup Vector" className="otp-grid"/>
                 <div className="otp-centre-icon">
                   <img
                     src="signup-logo.svg"

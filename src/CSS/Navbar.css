@@ -27,25 +27,12 @@
   flex-shrink: 0;
 }
 
-.dynamic-island {
-  width: 40%;
-  max-width: 563px;
-  height: 52px;
-  border-radius: 24px;
-  background: #ffffff45;
-  display: none; /* Hide by default on smaller screens */
-}
-
 
 
 /* Media Queries for Responsiveness */
 @media (min-width: 768px) {
   .nav-bar {
     padding: 0px 40px;
-  }
-
-  .dynamic-island {
-    display: block; /* Show on tablets and larger screens */
   }
 }
 

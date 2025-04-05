@@ -110,6 +110,7 @@ const NavBar = () => {
               </div>
             </div>
           </div>
+          
           <div className="nav__home-button-bg">
             <button className="nav__home-button">
               <img src="star1-icon.svg" alt="star1-icon" className="nav__star-icon" />

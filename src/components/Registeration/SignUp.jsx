@@ -179,7 +179,11 @@ const SignUp = () => {
                     }`}
                     disabled={!isSubmitButtonActive}
                   >
-                    Generate OTP
+                    {isSubmitButtonActive ? (
+                      <Link to="/otp-verify">Generate OTP</Link>
+                    ) : (
+                      "Generate OTP"
+                    )}
                   </button>
                 </form>
                 <footer className="form-footer">

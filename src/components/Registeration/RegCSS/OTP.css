@@ -1,7 +1,6 @@
-
 .otp-page-container {
   background: linear-gradient(180deg, rgb(123, 185, 247) 0%, #ecf5fe 55%);
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   width: 94vw;
@@ -16,6 +15,7 @@
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.1);
   align-self: stretch;
 }
+
 .otp-form-modal-cover {
   display: inline-flex;
   padding: 0.75rem;
@@ -28,6 +28,7 @@
   backdrop-filter: blur(10px);
   z-index: 5;
 }
+
 .otp-form-modal {
   display: flex;
   width: 32.5rem;
@@ -60,6 +61,15 @@
   margin-top: -7.2rem;
   display: flex;
 }
+
+.otp-grid{
+  position: absolute;
+  top: -7.2vw;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
 .otp-centre-icon {
   height: 3rem;
   width: 3rem;
