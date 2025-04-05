@@ -1,4 +1,4 @@
-.dynamic-island{
+.dynamic-island {
   height: 75%;
   width: 40%;
   position: relative;
@@ -7,14 +7,16 @@
   justify-content: center;
 }
 
-.di-union{
- height: 110%;
- width: 100%;
- position: absolute;
- top: 0;
+.di-union {
+  height: 110%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  transition: opacity 0.4s ease; /* Smooth fade-out */
 }
 
-.di-hover-rectangle{
+.di-hover-rectangle {
   display: flex;
   width: 95%;
   height: 68%;
@@ -28,24 +30,108 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
     0px 4px 16px 0px rgba(0, 0, 0, 0.24), 0px 4px 16px 0px rgba(0, 0, 0, 0.24),
     0px 3px 6px 0px rgba(70, 70, 70, 0.5) inset;
+  opacity: 0;
+  transition: opacity 0.4s ease; /* Smooth fade-in */
 }
 
-.di-movable-sec{
+.di-movable-sec {
   position: absolute;
   left: 2.6%;
   z-index: 7;
   height: 100%;
   width: fit-content;
-  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.6s ease 0.2s, transform 0.6s ease 0.2s; /* Smooth movement to center */
 }
 
-.di-hover-circle{
+.di-mov-btn-cnt {
+  position: absolute;
+  z-index: 9;
+  display: flex;
+  padding: 2px;
+  height: 80%;
+  aspect-ratio: 1 / 1; /* Ensures the width is always equal to the height */
+  align-items: center;
+  justify-content: center;
+  background-color: aquamarine;
+  border-radius: 1000px;
+  background: linear-gradient(
+    90deg,
+    rgba(242, 7, 144, 0.3) 0%,
+    rgba(0, 122, 255, 0.3) 100%
+  );
+}
+
+.di-movable-button {
+  z-index: 9;
+  display: flex;
+  padding: 2px;
+  position: absolute;
+  height: 85%;
+  aspect-ratio: 1 / 1; /* Ensures the width is always equal to the height */
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(90deg, #f20790 0%, #007aff 100%);
+  border: none;
+  border-radius: 1000px;
+}
+
+.di-movable-button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    transparent 0%,
+    rgba(255, 255, 255, 0.8) 15%,
+    transparent 30%
+  );
+  mask: radial-gradient(circle, transparent 63%, black 60% 100%);
+  animation: rotateLoading 3s linear infinite;
+}
+
+@keyframes rotateLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.di-hover-circle {
   height: 100%; /* The height will define the size */
   aspect-ratio: 1 / 1; /* Ensures the width is always equal to the height */
   border-radius: 50%; /* Makes it a perfect circle */
   background: #0d0d0d;
   z-index: 8;
-  box-shadow:
-    0px 3px 6px 0px rgba(70, 70, 70, 0.5) inset;
+  box-shadow: 0px 3px 6px 0px rgba(70, 70, 70, 0.5) inset;
   clip-path: inset(0 9px 0 9px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.6s ease; /* Smooth fade-in and scaling */
+}
+
+.dynamic-island:hover .di-hover-rectangle {
+  opacity: 1; /* Show the hover rectangle on hover */
+}
+
+.dynamic-island:hover .di-hover-circle {
+  opacity: 1; /* Show the hover circle on hover */
+  transform: scale(1.1); /* Slightly enlarge the circle */
+}
+
+.dynamic-island:hover .di-movable-sec {
+  left: 50%; /* Move the movable section to the middle */
+  transform: translate(-50%, 0%); /* Center it horizontally and vertically */
+  animation: moveDown 1s ease-in-out 0.8s forwards; /* Trigger the move-down animation */
+}
+
+.dynamic-island:hover .di-union {
+  opacity: 0; /* Hide the union on hover */
 }

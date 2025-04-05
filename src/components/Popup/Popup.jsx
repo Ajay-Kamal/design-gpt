@@ -4,6 +4,8 @@ import "./Popup.css";
 const Popup = () => {
   return (
     <div className="popup">
+
+      
       
       <div className="popup-chatbox">
         <div className="popup-chat-box1">
@@ -15,7 +17,6 @@ const Popup = () => {
           <textarea
             className="popup-chat-input"
             placeholder="Enter your prompt here"
-            
           />
         </div>
         <div className="popup-chat-box2">

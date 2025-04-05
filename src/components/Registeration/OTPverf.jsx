@@ -2,8 +2,14 @@ import React, { useState, useEffect } from "react";
 import SideBar from "../SideBar/SideBar";
 import LogNavBar from "./LogNavBar";
 import "./RegCSS/OTP.css";
+import { useNavigate } from "react-router-dom";
 
 const OTPverf = () => {
+  const navigate = useNavigate();
+  const handleExitClick = () => {
+    navigate(-1);
+  };
+
   const [otp, setOtp] = useState(["", "", "", "", "", ""]); // State to store each digit of the OTP
   const [countdown, setCountdown] = useState(30); // Countdown timer for resend OTP
   const [isSubmitEnabled, setIsSubmitEnabled] = useState(false); // State to enable/disable submit button
@@ -82,7 +88,11 @@ const OTPverf = () => {
           <section className="otp-form-modal">
             <div className="otp-form-content">
               <header className="otp-form-header">
-                <img src="Signup-Vector.svg" alt="Signup Vector" className="otp-grid"/>
+                <img
+                  src="Signup-Vector.svg"
+                  alt="Signup Vector"
+                  className="otp-grid"
+                />
                 <div className="otp-centre-icon">
                   <img
                     src="signup-logo.svg"
@@ -94,16 +104,19 @@ const OTPverf = () => {
               <section className="otp-welcome-section">
                 <h1 className="otp-welcome-title">OTP verification</h1>
                 <p className="otp-welcome-subtitle">
-                  Please enter the 6 digit verification code we have sent to
-                  your email,
-                  <a href="#" className="otp-change-email">
+                  <p>
+                    Please enter the 6 digit verification code we have sent to
+                    your email,
+                  </p>
+                  <span className="user-email">usermail@gmail.com </span>
+                  <a href="#" className="otp-change-email" style={{color: "blue"}}>
                     Change email
                   </a>
                 </p>
               </section>
               <section className="otp-input-section">
                 <div className="otp-group">
-                  {otp.slice(0, 3).map((digit, index) => (  
+                  {otp.slice(0, 3).map((digit, index) => (
                     <input
                       key={index}
                       type="text"
@@ -166,6 +179,10 @@ const OTPverf = () => {
             </div>
           </section>
         </section>
+        <img src="./signup-clouds.svg" alt="clouds" className="clouds" />
+        <button className="sign-up-exit" onClick={handleExitClick}>
+          <img src="./x-icon.svg" alt="back" />
+        </button>
       </main>
     </div>
   );
