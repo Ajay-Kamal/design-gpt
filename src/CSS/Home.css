@@ -1,9 +1,9 @@
 .home-page{
   min-height: 200vh;
+  overflow-x: hidden;
 }
 
 .home-page{
-  overflow-x: hidden;
   position: static;
   display: flex;
   height: fit-content;

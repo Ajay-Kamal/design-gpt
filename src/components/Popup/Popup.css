@@ -4,21 +4,43 @@
   position: fixed; /* Changed from relative to fixed */
   bottom: 0;
   right: 0;
-  z-index: 899;
-  background: linear-gradient(180deg, rgb(123, 185, 247) 0%, #ffffff 100%);
-  border-radius: 1.5rem 1.5rem 0 0;
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.1);
   /* Removed transform properties as they're no longer needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 829;  
+  border-radius: 1.5rem 1.5rem 0 0;
+  background: linear-gradient(180deg, #7bb9f7 0%, #77a4ff 30%, #ffffff 100%);
+  background-size: 100% 300%;
+  background-position: 0% 0%;
+  animation: bgGradientFlow 3s ease-in forwards;
+}
+
+@keyframes bgGradientFlow {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .popup-chatbox {
-  height: 144px;
-  position: absolute;
-  bottom: 25%;
-  left: 7%;
+  padding-top: 1.5px;
+  min-height: 20vh;
+  width: 70%;
   opacity: 1; /* Ensure it's visible */
   animation-delay: 30s; /* Start after stars and line disappear (1s delay for background change + 1s for stars/line animation) */
   transition: top 1s ease-in-out;
+  position: absolute;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  bottom: -10%;
 }
 
 .popup-chatbox.visible {
@@ -27,28 +49,26 @@
 
 .popup-chat-box1 {
   position: relative;
-  width: 1002px;
-  min-height: 144px; /* Minimum height */
-  max-height: 400px; /* Set a reasonable max height */
+  width: 99.7%;
   flex-shrink: 0;
-  border-radius: 24px;
   padding-top: 10px;
-  left: 15%;
-  top: 70%;
+  margin-top: 0.5px;
+  height: fix-content; /* Allows for dynamic height */
   background-color: white;
   display: flex;
+  border-radius: 24px 24px 0px 0px;
+  z-index: 901;
   flex-direction: column; /* Allows expansion */
   overflow: hidden; /* Prevents extra scrolling */
   transition: max-height 0.3s ease-in-out; /* Smooth transition */
-  border: 1.5px solid rgba(228, 228, 228, 0.5);
 }
 
-.popup-chat-box1::before {
+.popup-chatbox::before {
   content: "";
   position: absolute;
   inset: 0; /* Cover full box */
   border-radius: inherit; /* Same as parent */
-  padding: 1.5px; /* Border thickness */
+  padding: 1.5px;
   background: linear-gradient(90deg, #f20790, #007aff);
   -webkit-mask: linear-gradient(white 0 0) content-box,
     linear-gradient(white 0 0);
@@ -56,12 +76,13 @@
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0; /* Initially hidden */
-  z-index: 1;
+  z-index: 900;
   transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
 }
 
 /* Show moving border on hover */
-.popup-chat-box1:hover::before {
+.popup-chatbox:hover::before {
   opacity: 1;
   animation: movingBorder 8s infinite linear;
 }
@@ -85,36 +106,37 @@
   }
 }
 
+.popup-cb-input-sec {
+  width: 100%;
+  display: flex;
+  height: fit-content;
+  padding: 1%;
+}
+
 .chat-box-icon {
   display: flex;
-  width: 32px;
   height: 32px;
+  width: 5%;
   padding: 4px;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  margin-left: 10px;
 }
 
 .popup-chat-input {
-  width: 90%; /* Adjust width to avoid overflow */
-  border: none;
-  outline: none;
-  padding: 20px;
+  width: 98%;
+  height: 4.5rem;
+  scroll-behavior: smooth;
+  align-self: stretch;
   color: var(--Text-Primary-TextColor, #191919);
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 24px */
-  resize: none; /* Prevents manual resizing */
-  overflow-y: auto; /* Enables scrolling for longer text */
-  white-space: normal; /* Allows text wrapping */
-  word-wrap: break-word; /* Ensures words do not overflow */
-  background-color: transparent;
-  margin-left: 40px;
-  margin-top: -50px;
-  margin-bottom: 15px;
+  line-height: 150%; /* 1.5rem */
+  padding: 0.3rem;
+  outline: none;
+  border: none;
+  resize: none;
 }
 
 /* Fix placeholder overflow issue */
@@ -133,11 +155,8 @@
   justify-content: end;
   align-items: center;
   gap: 4px;
-  width: 1000px;
-  height: 62px;
-  left: 15.25%;
-  top: 25.2%;
-  margin-right: 20px;
+  width: 99.7%;
+  padding: 1.5%;
   border-top: 1px solid rgba(250, 250, 250, 0.1);
   border-radius: 0px 0px 24px 24px;
   background: linear-gradient(
@@ -150,6 +169,7 @@
 }
 
 .popup-attachment {
+  z-index: 923;
   font-family: Poppins, sans-serif;
   position: relative;
   right: 20px;
@@ -290,6 +310,7 @@
   background: linear-gradient(92deg, #f20790 1.88%, #007aff 94.66%);
   box-shadow: 0px -6px 2px 0px rgba(0, 0, 0, 0.1) inset;
   z-index: 2; /* Ensure button stays on top */
+  cursor: pointer;
 }
 
 /* Gradient Border Effect Behind the Button */
@@ -308,4 +329,354 @@
   width: 20px;
   height: 20px;
   align-items: center;
+}
+
+.image-preview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px; /* Slightly larger preview size */
+  height: 70px; /* Slightly larger preview size */
+
+  overflow: hidden; /* Ensure images stay within the container */
+  background: #f4f4f9; /* Light background for previews */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for previews */
+  margin-left: 2%;
+  margin-top: 1%;
+  overflow: visible;
+}
+
+.image-preview img {
+  width: 100%; /* Fill the container */
+  height: 100%; /* Fill the container */
+  object-fit: cover; /* Ensure the image fits nicely */
+  border-radius: 16px; /* Rounded corners */
+}
+
+.remove-preview-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  height: 20px;
+  width: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+  border-radius: 1000px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  outline: 2px solid #fff;
+  cursor: pointer;
+}
+
+.remove-preview-btn svg {
+  height: 8px;
+  width: 8px;
+  fill: var(--Text-Primary-TextColor, #191919);
+}
+
+.error-message {
+  width: 95%;
+  height: fit-content;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+  gap: 16px;
+}
+
+.error-message-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px; /* Slightly larger preview size */
+  height: 70px; /* Slightly larger preview size */
+  width: 8%;
+  border-radius: 1rem;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.94) 0%,
+      rgba(255, 255, 255, 0.94) 100%
+    ),
+    url(<path-to-image>) lightgray 50% / cover no-repeat;
+  overflow: visible;
+}
+
+.error-message-text {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+  border-radius: var(--Radius--Md, 0.5rem);
+  background: rgba(245, 0, 49, 0.04);
+  color: #f50031;
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: auto 0;
+  padding: 10px 20px;
+}
+
+.error-message-close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  height: 20px;
+  width: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex: 1 0 0;
+  border-radius: 1000px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  outline: 2px solid #fff;
+  cursor: pointer;
+}
+
+/* --- Initial Setup --- */
+.star-animation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  animation: rocketLaunch 1.8s ease-out forwards;
+  border-radius: inherit;
+}
+
+.popup-pulse {
+  position: absolute;
+  transform: translate(0%, 0%); /* Center alignment */
+  opacity: 0; /* Ensure visibility */
+  animation: pulsingEfct 7s ease-out forwards;
+  z-index: -830 !important;
+}
+
+@keyframes pulsingEfct {
+  0% {
+    /* transform: scale(2); */
+    width: 110%;
+    opacity: 0;
+  }
+  50% {
+    width: 110%;
+    /* transform: scale(2); */
+    opacity: 0;
+  }
+  90% {
+    /* transform: scale(1); */
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    /* transform: scale(1); */
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+/* --- Star Section --- */
+.sa-star-comp {
+  margin-top: 3%;
+  height: 20%;
+  aspect-ratio: 1/1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  animation: starEntry 1.8s ease-out forwards;
+}
+
+/* --- Star Visuals --- */
+.sa-star-sec {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sa-back-star {
+  position: absolute;
+}
+.sa-front-star {
+  position: absolute;
+}
+
+/* --- Star Tail --- */
+.sa-star-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 65%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  transform-origin: bottom center;
+  pointer-events: none;
+  opacity: 1;
+  animation-fill-mode: forwards;
+  animation: tailMovement 2s ease-out forwards;
+  opacity: 1;
+}
+
+/* --- Circle Container --- */
+.sa-circle-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.sa-circle-container.fade-out {
+  opacity: 0; /* Fade out the container */
+  pointer-events: none; /* Disable interactions after fade-out */
+}
+
+/* --- Circles --- */
+.circles {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes rocketLaunch {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes tailMovement {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+
+@keyframes circleFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes showCircles {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes starEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Creativity Text Animation */
+.sa-creativity-text {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44%;
+  height: 6%; /* Adjust as needed */
+}
+
+.sa-creativity-text img {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in; /* Smooth fade-in effect */
+}
+
+.sa-animated-txt {
+  position: relative;
+  width: 80%;
+  margin-top: 0.5vw;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.sa-animated-txt.fade-in{
+  opacity: 1; /* Fade out the text */
+  pointer-events: none; /* Disable interactions after fade-out */
+}
+
+.sa-magical {
+  width: 15.833vw;
+  height: 2.167vw;
+  margin: 0 0.417vw;
+}
+
+.sa-cursor {
+  width: 0.125vw;
+  height: 1.875vw;
+  margin-right: 0.417vw;
+}
+
+.sa-animated-txt p {
+  color: #191919;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.458vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-text-animation{
+  display: inline-block;
+  padding-left: 0.417vw;
 }

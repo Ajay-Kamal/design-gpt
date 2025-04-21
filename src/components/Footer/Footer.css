@@ -1,110 +1,168 @@
-.footer {
-  width: 100vw;
+.footer-container {
+  width: 100%;
   position: relative;
+  height: 37.4vw;
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
+  overflow: hidden;}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  height: 37.4vw;
   overflow: hidden;
+  transform: translateY(50%);
+  transition: transform 1s cubic-bezier(0.4,0,0.2,1);
 }
 
-.crazy {
-  width: 38%;
-  position: absolute;
-  bottom: 1%;
-  left: 1%;
+.footer-in-view {
+  transform: translateY(0%);
+  transition-delay:0.5s;
 }
-
-.design {
-  width: 38%;
-  position: absolute;
-  bottom: 1%;
-  right: 1%;
-}
-
-.machine-container {
-  width: 29.1875rem;
-  height: 32.8125rem;
-  flex-shrink: 0;
-  z-index: 99;
-  position: relative; /* Ensures the .eyes are positioned relative to this container */
-  transform: translateY(70%); /* Initial state */
-  transition: transform 1s ease-out; /* Smooth animation */
-}
-
-.machine-container.animate-in {
-  transform: translateY(0%); /* Final state when in viewport */
-}
-
-.machine-container img {
-  position: absolute;
-}
-
-.machine-final {
+/* 
+.footer {
   width: 100%;
-  height: 100%;
-}
-
-.machine-init {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  transition: opacity 0.5s ease-out;
-}
-
-.machine-init.fade-out {
-  opacity: 0;
-}
-
-.eyes {
-  width: 27%;
-  top: 16%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.eyes img {
-  position: absolute;
-  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
-  width: 100%;
-}
-
-.eyes-open {
-  opacity: 0;
-  z-index: 11; /* Higher z-index to appear above eyes-closed */
-}
-
-.eyes-open.show {
-  opacity: 1; /* Show the open eyes */
-}
-
-.eyes-closed {
   position: absolute;
   left: 0;
-  opacity: 1;
-  z-index: 10; /* Lower z-index to appear below eyes-open */
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 37.4vw;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 1s cubic-bezier(0.4,0,0.2,1);
+}
+.footer.footer-in-view {
+  transform: translateY(0%);
+} */
+
+.footer-bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
 
-.eyes-closed.hide {
-  opacity: 0; /* Hide the closed eyes */
+.footer-grid {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 85%;
 }
 
-.gif {
-  width: 66%;
-  height: 59%;
-  top: 10.9%;
-  left: 16.9%;
+.footer-text {
+  position: absolute;
+  z-index: 2;
+  top: 6.725vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text p {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.458vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0.87vw;
+}
+
+.footer-left-panel {
+  height: 37.292vw;
+  min-width: 8.333vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer-left-panel img {
+  position: absolute;
+  height: 100%;
+  width: 110%;
+}
+
+.footer-right-panel {
+  height: 37.292vw;
+  min-width: 8.333vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer-right-panel img {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 110%;
+}
+
+.footer-mach {
+  position: absolute;
+  top: 10vw;
+  height: 27.342vw;
+  width: 24.325vw;
+  z-index: 3;
+}
+
+.footer-mach div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mach-final-base,.mach-init-base {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.footer-eyes{
+  position: absolute;
+  width: 6.667vw;
+  top: 5vw;
+}
+
+.footer-mach-top{
+  position: absolute;
+  width: 60%;
+  top: 0;
+  opacity: 0;
+}
+
+.footer-gif{
+  position: absolute;
+  height: 60%;
   object-fit: cover;
   object-position: center;
+  width: 66%;
+  top: 10%;
   border-radius: 8px;
-  animation: opa-in 0.5s ease-in-out forwards; /* Smooth fade-in for the GIF */
 }
 
-@keyframes opa-in {
-  from {
-    opacity: 0;
-  }
-  to {
+.footer-comp-anim-out{
+  animation: fadeOut 1s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeOut {
+  0% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

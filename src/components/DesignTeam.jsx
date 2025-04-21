@@ -47,6 +47,7 @@ const DesignTeam = () => {
           <TeamCard key={member.id} props={member} />
         ))}
       </div>
+      <div className='dt-bg-blur'></div>
     </div>
   )
 }

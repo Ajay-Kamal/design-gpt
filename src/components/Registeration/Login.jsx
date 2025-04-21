@@ -96,7 +96,6 @@ const Login = () => {
                       <label htmlFor="password" className="floating-label">
                         PASSWORD
                       </label>
-                      {/* Conditionally render the eye icon */}
                       {formData.password.length > 0 && (
                         <img
                           id="eyeIcon"

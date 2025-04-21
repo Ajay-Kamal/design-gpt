@@ -5,6 +5,7 @@ import CompetitiveAnalysis from "./components/CompetitiveAnalysis";
 import Login from "./components/Registeration/Login";
 import SignUp from "./components/Registeration/SignUp";
 import OTPverf from "./components/Registeration/OTPverf"
+import ProfilePage from "./components/Profile.jsx/Profile";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/otp-verify" element={<OTPverf/>}/>
+      <Route path="/profile" element={<ProfilePage/>} />
     </Routes>
   );
 };

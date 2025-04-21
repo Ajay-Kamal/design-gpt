@@ -10,32 +10,27 @@ const OTPverf = () => {
     navigate(-1);
   };
 
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]); // State to store each digit of the OTP
-  const [countdown, setCountdown] = useState(30); // Countdown timer for resend OTP
-  const [isSubmitEnabled, setIsSubmitEnabled] = useState(false); // State to enable/disable submit button
-  const [isCountdownActive, setIsCountdownActive] = useState(false); // State to control countdown animation
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [countdown, setCountdown] = useState(30);
+  const [isSubmitEnabled, setIsSubmitEnabled] = useState(false);
+  const [isCountdownActive, setIsCountdownActive] = useState(false);
 
-  // Handle input change for each OTP field
   const handleInputChange = (e, index) => {
     const value = e.target.value;
     if (/^\d*$/.test(value)) {
-      // Allow only numeric input
       const newOtp = [...otp];
       newOtp[index] = value;
       setOtp(newOtp);
 
-      // Automatically focus the next input field
       if (value && index < 5) {
         const nextInput = document.querySelectorAll(".otp-field")[index + 1];
         if (nextInput) nextInput.focus();
       }
 
-      // Check if all fields are filled
       checkFields(newOtp);
     }
   };
 
-  // Handle key press for backspace to move to the previous input
   const handleKeyDown = (e, index) => {
     if (e.key === "Backspace" && !otp[index] && index > 0) {
       const prevInput = document.querySelectorAll(".otp-field")[index - 1];
@@ -43,21 +38,17 @@ const OTPverf = () => {
     }
   };
 
-  // Check if all OTP fields are filled
   const checkFields = (otpArray) => {
     const isFilled = otpArray.every((digit) => digit.length === 1);
     setIsSubmitEnabled(isFilled);
   };
 
-  // Combine OTP digits into a single variable
   const handleSubmit = (e) => {
     e.preventDefault();
-    const otpCode = otp.join(""); // Combine all digits into a single string
+    const otpCode = otp.join("");
     console.log("Entered OTP:", otpCode);
-    // Add your verification logic here
   };
 
-  // Countdown timer for resend OTP
   useEffect(() => {
     if (isCountdownActive && countdown > 0) {
       const timer = setInterval(() => {
@@ -65,18 +56,17 @@ const OTPverf = () => {
       }, 1000);
       return () => clearInterval(timer);
     } else if (countdown === 0) {
-      setIsCountdownActive(false); // Stop the countdown when it reaches 0
+      setIsCountdownActive(false);
     }
   }, [isCountdownActive, countdown]);
 
-  // Restart countdown when resend OTP is clicked
   const handleResendOTP = () => {
     console.log("Resend OTP clicked");
-    setCountdown(30); // Reset countdown to 30 seconds
-    setOtp(["", "", "", "", "", ""]); // Clear OTP fields
-    setIsSubmitEnabled(false); // Disable submit button
-    setIsCountdownActive(true); // Start the countdown
-    document.querySelectorAll(".otp-field")[0].focus(); // Focus on the first input
+    setCountdown(30);
+    setOtp(["", "", "", "", "", ""]);
+    setIsSubmitEnabled(false);
+    setIsCountdownActive(true);
+    document.querySelectorAll(".otp-field")[0].focus();
   };
 
   return (
@@ -109,7 +99,11 @@ const OTPverf = () => {
                     your email,
                   </p>
                   <span className="user-email">usermail@gmail.com </span>
-                  <a href="#" className="otp-change-email" style={{color: "blue"}}>
+                  <a
+                    href="#"
+                    className="otp-change-email"
+                    style={{ color: "blue" }}
+                  >
                     Change email
                   </a>
                 </p>

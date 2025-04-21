@@ -1,91 +1,108 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Footer.css";
 
 const Footer = () => {
   const [isInView, setIsInView] = useState(false);
-  const [showEyes, setShowEyes] = useState(false);
-  const [showGif, setShowGif] = useState(false);
-  const [hideInit, setHideInit] = useState(false);
+  const [gifKey, setGifKey] = useState(0);
+  const footerRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          // Start the sequence
-          setIsInView(true);
-
-          // Start fading out init image as component moves up
-          setTimeout(() => {
-            setHideInit(true);
-          }, 500); // Start fading out halfway through the move-up animation
-
-          // Wait for component to settle then show eyes
-          setTimeout(() => {
-            setShowEyes(true);
-
-            // Wait then show gif
-            setTimeout(() => {
-              setShowGif(true);
-            }, 2000);
-          }, 1000);
-        } else {
-          // Reset all states when out of view
-          setIsInView(false);
-          setShowEyes(false);
-          setShowGif(false);
-          setHideInit(false);
-        }
+        setIsInView(entry.isIntersecting);
       },
       { threshold: 0.9 }
     );
 
-    const footerElement = document.querySelector(".footer");
-    if (footerElement) {
-      observer.observe(footerElement);
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
     }
 
     return () => {
-      if (footerElement) {
-        observer.unobserve(footerElement);
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
       }
     };
   }, []);
 
+  useEffect(() => {
+    if (isInView) {
+      setGifKey((prev) => prev + 1);
+    }
+  }, [isInView]);
+
   return (
-    <div className="footer">
-      <img src="./footer-DESIGN.svg" alt="footer-crazy" className="crazy" />
-      <img src="./footer-CRAZY.svg" alt="footer-design" className="design" />
-      <div className={`machine-container ${isInView ? "animate-in" : ""}`}>
-        <img
-          src="./footer-mach-final.svg"
-          alt="footer-final"
-          className="machine-final"
-        />
-        <img
-          src="./footer-mach-init.svg"
-          alt="footer-init"
-          className={`machine-init ${hideInit ? "fade-out" : ""}`}
-        />
-        <div className="eyes">
+    <div className="footer-container " ref={footerRef}>
+      <div
+        className={`footer${isInView ? " footer-in-view" : ""}`}
+        ref={footerRef}
+      >
+        <div className="footer-mach">
+          <div className="footer-mcn-fnl">
+            <img
+              src="./footer-mach-final.svg"
+              alt="Footer-Final"
+              className="mach-final-base"
+            />
+            {isInView && (
+              <>
+                <img
+                  src="./footer-Footer.gif"
+                  className="footer-gif"
+                  key={gifKey}
+                />
+                <img src="./footer-mach-top.svg" className="footer-mach-top" />
+              </>
+            )}
+          </div>
+          <div
+            className={`footer-mcn-init${
+              isInView ? " footer-comp-anim-out" : ""
+            }`}
+          >
+            <img
+              src="./footer-mach-init.svg"
+              alt="Footer-Init"
+              className="mach-init-base"
+            />
+            <img src="./footer-Eyes.svg" alt="O  O" className="footer-eyes" />
+          </div>
+        </div>
+        <div className="footer-text">
+          <img src="./footer-txt-left.svg" alt="----->" />
+          <p> Crafted with <span className="footer-dil">❤️</span> Design Duh! </p>
+          <img src="./footer-txt-right.svg" alt="<-----" />
+        </div>
+        <img src="./footer-bg-grid.svg" className="footer-grid" />
+        <img src="./footer-bg.svg" className="footer-bg" />
+        <div className="footer-left-panel">
           <img
-            src="./footer-Eyes.svg"
-            alt="eyes-closed"
-            className={`eyes-closed ${showEyes ? "hide" : ""}`}
+            src="./footer-left-fnl.svg"
+            className="footer-right-fnl"
+            alt="||||"
           />
           <img
-            src="./footer-Eyes-open.svg"
-            alt="eyes-open"
-            className={`eyes-open ${showEyes ? "show" : ""}`}
+            src="./footer-left-init.svg"
+            className={`footer-left-init${
+              isInView ? " footer-comp-anim-out" : ""
+            }`}
+            alt="||||"
           />
         </div>
-        {showGif && (
+        <div className="footer-right-panel">
           <img
-            src="./footer-Footer.gif"
-            alt="footer-gif"
-            className="gif"
-            key={Date.now()}
+            src="./footer-right-fnl.svg"
+            className="footer-right-fnl"
+            alt="||||"
           />
-        )}
+          <img
+            src="./footer-right-init.svg"
+            className={`footer-right-init${
+              isInView ? " footer-comp-anim-out" : ""
+            }`}
+            alt="||||"
+          />
+        </div>
       </div>
     </div>
   );

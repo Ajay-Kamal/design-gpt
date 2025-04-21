@@ -16,7 +16,6 @@
   left: 0;
   height: 16vh;
   width: 100vw;
-  z-index: 10;
 }
 
 .act-nav {
@@ -31,7 +30,6 @@
   position: absolute; /* Relative to its parent container */
   top: 0; /* Aligns it to the top of the parent */
   left: 0; /* Aligns it to the left of the parent */
-  z-index: 10; /* Ensures it stays above other elements */
 }
 
 /* Logo styles */

@@ -4,7 +4,7 @@
   gap:0;
   height: 87vh;
   width: 10vw;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 999;
 }

@@ -27,6 +27,7 @@ const Nav = () => {
           </button>
         </div>
       </div>
+      
       <RegisterBtn />
     </div>
   );

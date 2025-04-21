@@ -14,6 +14,20 @@
   flex-direction: column;
 }
 
+.des-team::after{
+  width: 61.667vw;
+  height: 61.667vw;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 300%;
+  border-radius: 74.25rem;
+  background: rgba(255, 30, 161, 0.20);
+  filter: blur(450px);
+  z-index:-1;
+  content: "";
+  border: 9px solid black;
+}
+
 /* .dev-team-members {
   display: flex;
   align-items: center;
