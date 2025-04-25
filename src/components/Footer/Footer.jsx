@@ -11,7 +11,7 @@ const Footer = () => {
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { threshold: 0.9 }
+      { threshold: 0.3 },
     );
 
     if (footerRef.current) {
@@ -32,9 +32,12 @@ const Footer = () => {
   }, [isInView]);
 
   return (
-    <div className="footer-container " ref={footerRef}>
+    <div
+      className="footer-container"
+      ref={footerRef}
+    >
       <div
-        className={`footer${isInView ? " footer-in-view" : ""}`}
+        className={`footer ${isInView ? "footer-in-view" : ""}`}
         ref={footerRef}
       >
         <div className="footer-mach">
@@ -70,7 +73,9 @@ const Footer = () => {
         </div>
         <div className="footer-text">
           <img src="./footer-txt-left.svg" alt="----->" />
-          <p> Crafted with <span className="footer-dil">❤️</span> Design Duh! </p>
+          <p>
+            Crafted with <span className="footer-dil">❤️</span> Design Duh!
+          </p>
           <img src="./footer-txt-right.svg" alt="<-----" />
         </div>
         <img src="./footer-bg-grid.svg" className="footer-grid" />

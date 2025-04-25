@@ -3,7 +3,7 @@
   src: url("/fonts/Bohemian Soul .woff2") format("woff2"),
     /* Path to the font file */ url("/fonts/Bohemian Soul .woff") format("woff"); /* Fallback for older browsers */
   font-weight: normal; /* Specify the font weight */
-  font-style: normal; /* Specify the font style */  
+  font-style: normal; /* Specify the font style */
 }
 
 .des-team {
@@ -12,33 +12,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 4.792vw;
 }
 
-.des-team::after{
-  width: 61.667vw;
-  height: 61.667vw;
-  transform: rotate(90deg);
-  position: absolute;
-  top: 300%;
-  border-radius: 74.25rem;
-  background: rgba(255, 30, 161, 0.20);
-  filter: blur(450px);
-  z-index:-1;
-  content: "";
-  border: 9px solid black;
-}
-
-/* .dev-team-members {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-top: 32px;
-  margin-bottom: 124px;
-} */
-
-.des-team-head{
+.des-team-head {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +28,7 @@
   align-items: center;
 }
 
-.overtime-artists  p {
+.overtime-artists p {
   text-align: center;
   font-family: Poppins;
   font-size: 28px;
@@ -96,4 +73,153 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.12px;
+}
+
+.des-team-members {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.133vw;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.des-team-members::after {
+  width: 61.667vw;
+  height: 61.667vw;
+  transform: rotate(90deg);
+  position: absolute;
+  border-radius: 74.25rem;
+  background: rgba(255, 30, 161, 0.2);
+  filter: blur(450px);
+  z-index: -1;
+  content: "";
+}
+
+.des-left-sec,
+.des-right-sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.des-mid-sec {
+  display: inline-grid;
+  width: stretch;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.56rem;
+}
+
+.des-is-art {
+  width: 10.5vw;
+  height: 3.125vw;
+  padding: 0.625vw 1.25vw;
+  display: flex;
+  position: absolute;
+  top: 3.7vw;
+  left: 5vw;
+  border-radius: var(--Radius--Xl, 1rem);
+  background: linear-gradient(
+    186deg,
+    #fff5fb 4.57%,
+    rgba(255, 245, 251, 0) 112.39%
+  );
+  border: none;
+}
+
+.des-is-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(90deg, #ff009a 0%, #0877fc 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: exclude;
+}
+
+.des-is-art,
+.des-is-czy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.des-is-art p {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.15vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.0165rem;
+  background: linear-gradient(127deg, #ff008a 24.88%, #007aff 80.33%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.des-is-czy {
+  width: 9.5vw;
+  height: 3.125vw;
+  padding: 0.625vw 1.25vw;
+  display: flex;
+  position: absolute;
+  bottom: 3.7vw;
+  right: 5vw;
+  border-radius: var(--Radius--Xl, 1rem);
+  background: linear-gradient(
+    186deg,
+    #fff5fb 4.57%,
+    rgba(255, 245, 251, 0) 112.39%
+  );
+}
+
+.des-is-czy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(90deg, #ff009a 0%, #0877fc 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: exclude;
+}
+
+.des-is-czy p {
+  text-align: center;
+  font-family: Poppins;
+  font-size: 1.25vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.0165rem;
+  background: linear-gradient(127deg, #ff008a 24.88%, #007aff 80.33%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.des-pntr1{
+  position: absolute;
+  top: 1.8vw;
+  left: 9.6vw;
+}
+
+.des-pntr2{
+  position: absolute;
+  bottom: 1.8vw;
+  right: 8.5vw;
+  transform: rotate(-180deg);
 }

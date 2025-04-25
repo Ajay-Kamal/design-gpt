@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SideBar from "../SideBar/SideBar";
 import LogNavBar from "./LogNavBar";
 import "./RegCSS/OTP.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const OTPverf = () => {
   const navigate = useNavigate();
@@ -141,6 +141,7 @@ const OTPverf = () => {
               </section>
               <section className="otp-form-section">
                 <form className="otp-form-container" onSubmit={handleSubmit}>
+                  <Link to="/avatar-section">
                   <button
                     type="submit"
                     className={`otp-submit-button ${
@@ -149,7 +150,7 @@ const OTPverf = () => {
                     disabled={!isSubmitEnabled}
                   >
                     Verify
-                  </button>
+                  </button></Link>
                 </form>
                 <div className="otp-grey-line"></div>
                 <footer className="otp-form-footer">
