@@ -1,7 +1,7 @@
 import "../CSS/Bento.css";
 import { useInView } from "react-intersection-observer";
 import { useStatus } from "./StatusProvider";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 const Bento = () => {
 
@@ -1128,32 +1128,6 @@ const Bento = () => {
               <stop offset="0.664949" stopColor="#F20790" />
               <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
             </linearGradient>
-            {/* <linearGradient
-              id="paint1_linear_7183_7015"
-              x1="-6.00005"
-              y1="10.5"
-              x2="653.905"
-              y2="110.807"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#0D77FB" />
-              <stop offset="0.664949" stopColor="#F20790" />
-              <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
-              <animateTransform
-                // attributeName="gradientTransform"
-                // type="translate"
-                // keyTimes="0; 0.3; 1"
-                // values="-800 0; 200 0; 200 0"
-                // dur="8s"
-                // repeatCount="indefinite"
-                attributeName="gradientTransform"
-                type="translate"
-                keyTimes="0; 0.2; 0.5; 1"
-                values="-800 0; -800 0; 200 0; 0 0"
-                dur="12s"
-                repeatCount="indefinite"
-              />
-            </linearGradient> */}
             <linearGradient
               id="paint2_linear_7183_7015"
               x1="293.309"

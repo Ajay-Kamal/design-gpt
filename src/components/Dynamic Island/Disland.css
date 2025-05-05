@@ -1,10 +1,18 @@
 .dynamic-island {
   height: 75%;
-  width: 40%;
+  width: 40vw;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 899;
+}
+
+.di-union-cir {
+  position: absolute;
+  z-index: 900;
+  height: 100%;
+  display: flex;
 }
 
 .di-union {
@@ -13,45 +21,94 @@
   position: absolute;
   top: 0;
   opacity: 1;
-  transition: opacity 0.4s ease; /* Smooth fade-out */
+  /* Smooth fade-out with cubic-bezier */
+  transition: opacity 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .di-hover-rectangle {
   display: flex;
-  width: 95%;
+  width: 100%;
   height: 68%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
-  z-index: 6;
+  z-index: 901;
   border-radius: var(--full-radius, 1000px);
   background: #0d0d0d;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
     0px 4px 16px 0px rgba(0, 0, 0, 0.24), 0px 4px 16px 0px rgba(0, 0, 0, 0.24),
     0px 3px 6px 0px rgba(70, 70, 70, 0.5) inset;
   opacity: 0;
-  transition: opacity 0.4s ease; /* Smooth fade-in */
+  /* Smooth fade-in with cubic-bezier */
+  transition: opacity 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  overflow: hidden;
+  transform-origin: top center;
+}
+
+.di-scale {
+  width: 120%;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+
+.dynamic-island:hover .di-scale {
+  animation: slideIn 0.3s ease-in 0.9s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 
 .di-movable-sec {
   position: absolute;
-  left: 2.6%;
-  z-index: 7;
+  left: 4%;
+  z-index: 902;
   height: 100%;
   width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: left 0.6s ease 0.2s, transform 0.6s ease 0.2s; /* Smooth movement to center */
+  /* Bouncy movement to center */
+  transition: left 0.55s cubic-bezier(0.5, -0.1, 0.2, 1.1) 0.18s,
+    transform 0.55s cubic-bezier(0.5, -0.1, 0.2, 1.1) 0.18s;
+}
+
+.di-movable-sec {
+  position: absolute;
+  left: 4%;
+  top: 0;
+  transform: none;
+  transition: left 0.55s cubic-bezier(0.5, 1, 2,0.5),
+    transform 1.2s cubic-bezier(0.5, -0.1, 0.2, 1) ;
+}
+
+.di-movable-sec.at-union-center {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0%);
+}
+
+.di-movable-sec.at-rectangle-center {
+  left: 50%;
+  top: 75%; /* or whatever is the center of the rectangle */
+  transform: translate(-50%, -50%);
 }
 
 .di-mov-btn-cnt {
   position: absolute;
-  z-index: 9;
+  z-index: 904;
   display: flex;
   padding: 2px;
-  height: 80%;
+  height: 4.1vw;
   aspect-ratio: 1 / 1; /* Ensures the width is always equal to the height */
   align-items: center;
   justify-content: center;
@@ -65,21 +122,20 @@
 }
 
 .di-movable-button {
-  z-index: 9;
+  z-index: 904;
   display: flex;
   padding: 2px;
   position: absolute;
-  height: 85%;
+  height: 3.4vw;
   aspect-ratio: 1 / 1; /* Ensures the width is always equal to the height */
   align-items: center;
   justify-content: center;
-
   background: linear-gradient(90deg, #f20790 0%, #007aff 100%);
   border: none;
   border-radius: 1000px;
 }
 
-.di-movable-button::before{
+.di-movable-button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -110,11 +166,13 @@
   aspect-ratio: 1 / 1; /* Ensures the width is always equal to the height */
   border-radius: 50%; /* Makes it a perfect circle */
   background: #0d0d0d;
-  z-index: 8;
+  z-index: 903;
   box-shadow: 0px 3px 6px 0px rgba(70, 70, 70, 0.5) inset;
   clip-path: inset(0 9px 0 9px);
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.6s ease; /* Smooth fade-in and scaling */
+  /* Smooth fade-in and scaling with cubic-bezier */
+  transition: opacity 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .dynamic-island:hover .di-hover-rectangle {
@@ -126,6 +184,10 @@
   transform: scale(1.1); /* Slightly enlarge the circle */
 }
 
+.di-hover-circle.at-union-center {
+  opacity: 0;
+}
+
 .dynamic-island:hover .di-movable-sec {
   left: 50%; /* Move the movable section to the middle */
   transform: translate(-50%, 0%); /* Center it horizontally and vertically */
@@ -134,4 +196,28 @@
 
 .dynamic-island:hover .di-union {
   opacity: 0; /* Hide the union on hover */
+}
+
+/* Keyframes for hoverRectangleGrow with cubic-bezier in animation */
+@keyframes hoverRectangleGrow {
+  0% {
+    transform: scaleY(1);
+    height: 68%;
+    width: 100%;
+    transform: translateY(0%);
+    border-radius: 10px;
+  }
+  100% {
+    transform: scaleY(1.25);
+    transform: translateY(30%);
+    width: 120%;
+    height: 200%;
+    border-radius: 20px;
+  }
+}
+
+.dynamic-island:hover .di-hover-rectangle {
+  opacity: 1;
+  animation: hoverRectangleGrow 0.5s 0.8s forwards
+    cubic-bezier(0.68, -0.25, 0.27, 1.55);
 }

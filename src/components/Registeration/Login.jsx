@@ -42,7 +42,6 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      <LogNavBar />
       <SideBar />
       <main className="page-container">
         <section className="form-modal-cover">
@@ -140,6 +139,7 @@ const Login = () => {
           <img src="./x-icon.svg" alt="back" />
         </button>
       </main>
+      <LogNavBar />
     </div>
   );
 };

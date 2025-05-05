@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, use } from "react";
 import SideBar from "../SideBar/SideBar";
 import "../Registeration/RegCSS/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -16,6 +16,27 @@ const SignUp = () => {
     email: "",
     password: "",
   });
+
+  const [emailError, setEmailError] = useState(false);
+  const [passContainMixChars, setPassContainMixChars] = useState(false);
+  const [passContainSpecialChars, setPassContainSpecialChars] = useState(false);
+  const [passContainNumbers, setPassContainNumbers] = useState(false);
+  const allRequirementsMet =
+    passContainMixChars &&
+    passContainSpecialChars &&
+    passContainNumbers &&
+    !emailError;
+  useEffect(() => {
+    const password = formData.password;
+    setPassContainMixChars(/[a-z]/.test(password) && /[A-Z]/.test(password));
+    setPassContainSpecialChars(/[^a-zA-Z0-9]/.test(password));
+    setPassContainNumbers(/[0-9]/.test(password));
+  }, [formData.password]);
+
+  useEffect(() => {
+    const email = formData.email;
+    setEmailError(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+  }, [formData.email]);
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isPasswordRequirementsVisible, setIsPasswordRequirementsVisible] =
@@ -53,7 +74,6 @@ const SignUp = () => {
   return (
     <div className="sign-up" style={{ height: "100vh", width: "100vw" }}>
       <SideBar />
-      <RegNavBar />
       <main className="page-container">
         <section className="form-modal-cover">
           <section className="form-modal" style={{ height: formHeight }}>
@@ -89,6 +109,7 @@ const SignUp = () => {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
+                        autoComplete="off"
                       />
                       <label htmlFor="firstName" className="floating-label">
                         FIRST NAME
@@ -102,6 +123,7 @@ const SignUp = () => {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
+                        autoComplete="off"
                       />
                       <label htmlFor="lastName" className="floating-label">
                         LAST NAME
@@ -117,6 +139,7 @@ const SignUp = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
+                        autoComplete="off"
                       />
                       <label htmlFor="email" className="floating-label">
                         EMAIL
@@ -130,6 +153,7 @@ const SignUp = () => {
                         value={formData.password}
                         onChange={handleInputChange}
                         required
+                        autoComplete="off"
                       />
                       <label htmlFor="password" className="floating-label">
                         PASSWORD
@@ -152,30 +176,70 @@ const SignUp = () => {
                     {isPasswordRequirementsVisible && (
                       <div className="password-requirements">
                         <div className="requirement">
-                          <p className="requirement-text-green">
+                          <p
+                            className={
+                              passContainMixChars
+                                ? "requirement-text-green"
+                                : "requirement-text-red"
+                            }
+                          >
                             <img
-                              src="./signup-check-logo.svg"
+                              src={
+                                passContainMixChars
+                                  ? "./signup-check-logo.svg"
+                                  : "./x-circle.svg"
+                              }
                               className="requirement-icon"
-                              alt=""
+                              alt="x"
                             />
                             Mix of uppercase & lowercase letter
                           </p>
                         </div>
-                        <ul>
-                          <li className="requirement-text">
-                            Contain at least 1 special character
-                          </li>
-                          <li className="requirement-text">
-                            Contain at least 1 number
-                          </li>
-                        </ul>
+                        <p
+                          className={
+                            passContainSpecialChars
+                              ? "requirement-text-green"
+                              : "requirement-text-red"
+                          }
+                        >
+                          <img
+                            src={
+                              passContainSpecialChars
+                                ? "./signup-check-logo.svg"
+                                : "./x-circle.svg"
+                            }
+                            className="requirement-icon"
+                            alt="x"
+                          />
+                          Contain at least 1 special character
+                        </p>
+                        <p
+                          className={
+                            passContainNumbers
+                              ? "requirement-text-green"
+                              : "requirement-text-red"
+                          }
+                        >
+                          <img
+                            src={
+                              passContainNumbers
+                                ? "./signup-check-logo.svg"
+                                : "./x-circle.svg"
+                            }
+                            className="requirement-icon"
+                            alt="x"
+                          />
+                          Contain at least 1 number
+                        </p>
                       </div>
                     )}
                   </div>
                   <button
                     type="button"
                     className={`submit-button ${
-                      isSubmitButtonActive ? "active-button" : ""
+                      isSubmitButtonActive && allRequirementsMet
+                        ? "active-button"
+                        : ""
                     }`}
                     disabled={!isSubmitButtonActive}
                   >
@@ -188,14 +252,15 @@ const SignUp = () => {
                 </form>
                 <footer className="form-footer">
                   <p className="account-text">Already have an account?</p>
-                  <a className="signin-link">
-                    <Link to="/login">Sign in</Link>
-                  </a>
+                  <Link to="/login" className="signin-link">
+                    Sign in
+                  </Link>
                 </footer>
               </section>
             </div>
           </section>
         </section>
+        <RegNavBar />
         <img src="./signup-clouds.svg" alt="clouds" className="clouds" />
         <button className="sign-up-exit" onClick={handleExitClick}>
           <img src="./x-icon.svg" alt="back" />

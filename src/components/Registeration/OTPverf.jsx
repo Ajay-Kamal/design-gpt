@@ -50,22 +50,22 @@ const OTPverf = () => {
   };
 
   useEffect(() => {
-    if (isCountdownActive && countdown > 0) {
+    setCountdown(30);
+  }, []);
+
+  useEffect(() => {
+    if (countdown > 0) {
       const timer = setInterval(() => {
         setCountdown((prev) => prev - 1);
       }, 1000);
       return () => clearInterval(timer);
-    } else if (countdown === 0) {
-      setIsCountdownActive(false);
     }
-  }, [isCountdownActive, countdown]);
+  }, [countdown]);
 
   const handleResendOTP = () => {
-    console.log("Resend OTP clicked");
     setCountdown(30);
     setOtp(["", "", "", "", "", ""]);
     setIsSubmitEnabled(false);
-    setIsCountdownActive(true);
     document.querySelectorAll(".otp-field")[0].focus();
   };
 
@@ -139,9 +139,15 @@ const OTPverf = () => {
                   ))}
                 </div>
               </section>
-              <section className="otp-form-section">
-                <form className="otp-form-container" onSubmit={handleSubmit}>
-                  <Link to="/avatar-section">
+              <div className="otp-error">
+                <img src="./popup-uploaderror.svg" alt="!" />
+                <p>This code isn't valid. Have another go!</p>
+              </div>
+              <form className="otp-form-container" onSubmit={handleSubmit}>
+                <Link
+                  to="/avatar-section"
+                  style={{ height: "max-content", width: "max-content" }}
+                >
                   <button
                     type="submit"
                     className={`otp-submit-button ${
@@ -150,27 +156,35 @@ const OTPverf = () => {
                     disabled={!isSubmitEnabled}
                   >
                     Verify
-                  </button></Link>
-                </form>
-                <div className="otp-grey-line"></div>
-                <footer className="otp-form-footer">
-                  <p className="otp-account-text">Didn’t receive the OTP?</p>
-                  {isCountdownActive ? (
-                    <p id="otp-timer" className="otp-timer">
-                      Resend in (<span id="countdown">{countdown}</span>s)
-                    </p>
-                  ) : (
-                    <button
-                      id="otp-resend"
-                      className="otp-resend"
-                      onClick={handleResendOTP}
-                      style={{ cursor: "pointer", color: "blue" }}
-                    >
-                      Resend OTP
-                    </button>
-                  )}
-                </footer>
-              </section>
+                  </button>
+                </Link>
+              </form>
+              <div className="otp-grey-line"></div>
+              <footer className="otp-form-footer">
+                <p className="otp-account-text">Didn’t receive the OTP?</p>
+                <button
+                  id="otp-resend"
+                  className={`otp-resend${
+                    countdown === 0
+                      ? " otp-resend-gradient"
+                      : " otp-resend-disabled"
+                  }`}
+                  onClick={handleResendOTP}
+                  disabled={countdown !== 0}
+                  style={{
+                    cursor: countdown === 0 ? "pointer" : "not-allowed",
+                  }}
+                >
+                  {countdown ? "Request a new code in" : "Resend OTP"}
+                </button>
+                <p id="otp-timer" className="otp-timer">
+                  (00:
+                  <span id="countdown">
+                    {String(countdown).padStart(2, "0")}
+                  </span>
+                  )
+                </p>
+              </footer>
             </div>
           </section>
         </section>

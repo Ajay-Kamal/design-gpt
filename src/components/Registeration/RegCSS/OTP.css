@@ -27,15 +27,16 @@
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   z-index: 5;
+  height: auto;
 }
 
 .otp-form-modal {
   display: flex;
   width: 32.5rem;
-  height: 26.25rem;
+  height: 100%;
   padding: 2.25rem 0 var(--Radius--3Xl, 2rem) 0;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 2.5rem;
   border-radius: var(--Radius--Xl, 1rem);
   border: 1.5px solid rgba(25, 25, 25, 0.08);
@@ -51,23 +52,27 @@
   text-align: center; /* Centers text properly */
 }
 
-.otp-form-header img {
-  width: 46.875rem;
-  height: 31.25rem;
-  max-width: 100%;
-  object-fit: contain;
-  display: block;
-  position: relative; /* Remove absolute positioning to keep it inside */
-  margin-top: -7.2rem;
+.otp-form-content {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* <-- This will push .otp-error to the bottom! */
+  height: 100%;
 }
 
-.otp-grid{
+.otp-grid {
   position: absolute;
-  top: -7.2vw;
-  height: 100%;
   object-fit: cover;
   width: 100%;
+  top: -2.4vw;
+  left: 0;
+}
+
+.otp-form-header {
+  position: relative;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 20%;
 }
 
 .otp-centre-icon {
@@ -82,19 +87,15 @@
     rgba(255, 0, 154, 0.2) 0%,
     rgba(8, 119, 252, 0.2) 100%
   );
-  position: absolute;
-  top: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   z-index: 10;
 }
 
 .otp-signup-logo {
   max-width: 100%; /* Prevents overflow and scales the image */
-  max-height: 100%;
-  object-fit: contain; /* Ensures the entire image fits within the container */
-  top: 3.6rem;
+  position: relative;
 }
+
 /* Welcome section */
 .otp-welcome-section {
   display: flex;
@@ -103,8 +104,7 @@
   align-items: center;
   text-align: center;
   gap: 4px;
-  position: absolute; /* Positions it relative to the page */
-  top: 5.8rem; /* Places it just below .centre-icon */
+  position: relative; /* itions it relative to the page */
   left: 50%;
   transform: translateX(-50%); /* Ensures perfect centering */
   width: 105%;
@@ -139,11 +139,10 @@
   gap: 1rem;
   position: relative;
   margin-left: -1.9rem;
-  margin-top: -15rem;
 }
 
 .otp-change-email {
-  color: var(--Primary-Blue-Color, #007AFF);
+  color: var(--Primary-Blue-Color, #007aff);
   text-align: center;
   font-family: Poppins;
   font-size: 0.875rem;
@@ -175,7 +174,6 @@
   border-radius: 0.75rem;
   background: #fff;
   outline: none;
-  margin-top: -15rem;
   display: block;
   position: relative;
   z-index: 10;
@@ -234,7 +232,27 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  margin-top: -14rem;
+}
+
+.otp-error {
+  position: relative;
+  display: flex;
+  padding: 0.5rem 0.75rem;
+  margin: 1.5rem 0;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: stretch;
+  border-radius: var(--Radius--Md, 0.5rem);
+ background: rgba(245, 0, 49, 0.04);
+}
+
+.otp-error p{
+  color: #F50031;
+font-family: Poppins;
+font-size: 1rem;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
 }
 
 .otp-submit-button,
@@ -250,8 +268,7 @@
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
-  margin-top: 4.6rem;
+  line-height: normal;  
   margin-bottom: 0;
   margin-left: 1.8rem;
   position: relative;
@@ -303,7 +320,34 @@
 }
 
 .otp-resend {
-  color: blue;
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.otp-resend-disabled {
+  color: rgba(25, 25, 25, 0.75);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%; /* 0.875rem */
+}
+
+.otp-resend-gradient {
+  background: linear-gradient(90deg, #ff009a 0%, #0877fc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  pointer-events: auto;
+}
+
+.otp-req {
+  color: rgba(25, 25, 25, 0.75);
   font-family: Poppins;
   line-height: 100%;
   font-size: inherit;
@@ -312,23 +356,20 @@
   font-weight: 500;
   z-index: 10;
 }
-.otp-resend:hover {
-  color: darkblue;
-  cursor: pointer;
+
+.user-email {
+  color: rgba(25, 25, 25, 0.75);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #191919;
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
-.user-email{
-  color: rgba(25, 25, 25, 0.75);
-text-align: center;
-font-family: Poppins;
-font-size: 0.875rem;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-color: #191919;
-font-family: Poppins;
-font-size: 0.875rem;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-}
