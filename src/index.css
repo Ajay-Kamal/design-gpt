@@ -4,3 +4,11 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 480px) {
+  * {
+    content: "";
+    background-color: white;
+    visibility: hidden;
+    display: none;
+  }
+}

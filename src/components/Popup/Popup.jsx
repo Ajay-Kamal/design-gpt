@@ -6,6 +6,7 @@ const Popup = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [dragActive, setDragActive] = useState(false);
   const [visibleCircles, setVisibleCircles] = useState([]);
+  const [hidingCircles, setHidingCircles] = useState([]);
   const [starAnimationComplete, setStarAnimationComplete] = useState(false);
   const [circleAnimationComplete, setCircleAnimationComplete] = useState(false);
   const [visibleImages, setVisibleImages] = useState([]);
@@ -13,7 +14,8 @@ const Popup = () => {
   const words = [" desired ", " design ", " desired ", " design "];
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isCreativityTextComplete, setIsCreativityTextComplete] = useState(false);
+  const [isCreativityTextComplete, setIsCreativityTextComplete] =
+    useState(false);
 
   useEffect(() => {
     let timeoutId;
@@ -48,34 +50,35 @@ const Popup = () => {
   }, [currentText, isDeleting, wordIndex]);
 
   useEffect(() => {
-    // Simulate star animation completion after 2 seconds (duration of star animation)
     const starAnimationTimeout = setTimeout(() => {
-      setStarAnimationComplete(true); // Mark star animation as complete
-    }, 2000); // Match the duration of the star animation
+      setStarAnimationComplete(true);
+    }, 2000);
     return () => clearTimeout(starAnimationTimeout); // Cleanup timeout
   }, []);
-  
+
   useEffect(() => {
     if (starAnimationComplete) {
-      // Animate circles sequentially after star animation completes
+      const totalCircles = 6;
+      let currentIndex = 0;
+
       const animateCircles = () => {
-        const totalCircles = 6; // Total number of circles
-        let currentIndex = 0;
+        setVisibleCircles([currentIndex]);
+        setHidingCircles([]); // Only keep the current visible
 
-        const interval = setInterval(() => {
-          setVisibleCircles((prev) => [...prev, currentIndex]); // Add the current circle to the visible list
-          currentIndex++;
-
-          if (currentIndex >= totalCircles) {
-            clearInterval(interval); // Stop the animation when all circles are visible
-            setTimeout(() => setCircleAnimationComplete(true), 1000); // Trigger fade-out after 1 second
-          }
-        }, 200); // 200ms delay between each circle
+        currentIndex++;
+        if (currentIndex < totalCircles) {
+          setTimeout(animateCircles, 200); // 0.1s for each step
+        } else {
+          // After the last circle, hide it and complete animation
+          setTimeout(() => {
+            setVisibleCircles([]);
+            setCircleAnimationComplete(true);
+          }, 100);
+        }
       };
-
-      animateCircles();
+        animateCircles();
     }
-  }, [starAnimationComplete]); // Trigger circle animation only after star animation completes
+  }, [starAnimationComplete]);
 
   useEffect(() => {
     if (circleAnimationComplete) {
@@ -203,7 +206,10 @@ const Popup = () => {
                 className={`sa-circle${num} circles`}
                 src={`./popup-circle${num}.svg`}
                 alt={`circle${num}`}
-                style={{ opacity: visibleCircles.includes(index) ? 1 : 0 }}
+                style={{
+                  opacity: visibleCircles.includes(index) ? 1 : 0,
+                  transition: "opacity 0.2s",
+                }}
               />
             ))}
           </div>
@@ -224,7 +230,11 @@ const Popup = () => {
             />
           ))}
         </div>
-        <div className={`sa-animated-txt ${isCreativityTextComplete ? "fade-in" : ""}`}>
+        <div
+          className={`sa-animated-txt ${
+            isCreativityTextComplete ? "fade-in" : ""
+          }`}
+        >
           <p>
             Our
             <img

@@ -1,11 +1,9 @@
-/* Enable custom property animation */
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
 
-/* Keyframes for smooth rotation */
 @keyframes rotate-gradient {
   0% {
     --angle: 0deg;
@@ -15,7 +13,6 @@
   }
 }
 
-/* Keyframes for Text Shine Effect */
 @keyframes textShine {
   0% {
     left: -150%;
@@ -25,46 +22,43 @@
   }
 }
 
-/* Register Button */
 .register {
   position: relative;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: clamp(20px, 2vw, 28px);
-  width: clamp(120px, 10vw, 156px);
-  height: clamp(40px, 5vw, 52px);
+  width: 10vw;
+  height: 50%;
+  border-radius: 625rem;
   overflow: hidden;
   background: white;
   backdrop-filter: blur(11px);
   border: none;
 }
+
 .register:hover {
   background: linear-gradient(180deg, #fff 62.76%, #ffdbf0 100%);
   box-shadow: 0px 2px 9.1px 0px rgba(242, 7, 144, 0.4),
-    /* Bottom-right */ 0px 2px 9.1px 0px rgba(242, 7, 144, 0.4),
-    /* Bottom-left */ 0px -2px 9.1px 0px rgba(13, 119, 251, 0.4),
-    /* Top-right */ 0px -2px 9.1px 0px rgba(13, 119, 251, 0.4); /* Top-left */
+    0px 2px 9.1px 0px rgba(242, 7, 144, 0.4),
+    0px -2px 9.1px 0px rgba(13, 119, 251, 0.4),
+    0px -2px 9.1px 0px rgba(13, 119, 251, 0.4);
 }
-/* Default Linear Gradient Border */
+
 .register::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 3px;
+  padding: 0.2vw;
   background: linear-gradient(90deg, #ff009a 0%, #0877fc 100%);
-
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: exclude;
-
   transition: background 0.3s ease;
 }
 
-/* Rotating Gradient Border on Hover */
 .register:hover::before {
   background: conic-gradient(
     from var(--angle),
@@ -72,23 +66,30 @@
     #007aff 160deg 260deg,
     #f20790 320deg 360deg
   );
-
   animation: rotate-gradient 6s linear infinite;
 }
 
-/* Initially Black Text with Shine Effect */
+.register a{
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .register span {
   position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: 1.1vw;
   font-weight: 500;
   text-transform: capitalize;
-  color: #191919; /* Initially black text */
+  color: #191919;
   display: inline-block;
   overflow: hidden;
 }
 
-/* Shine Effect Inside Text (Always Running) */
 .register span::after {
   content: "";
   position: absolute;
@@ -107,7 +108,6 @@
   animation: textShine 4s linear infinite;
 }
 
-/* On Hover, Text Color Changes to Gradient & Shine Stops */
 .register:hover span {
   background: linear-gradient(90deg, #f20790, #007aff);
   -webkit-background-clip: text;
@@ -115,40 +115,16 @@
 }
 
 .register:hover span::after {
-  animation: none; /* Stop shine effect */
+  animation: none;
 }
 
-/* Centering the text inside the button */
 .register {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-/* Remove Black Frame on Hover */
+
 .register:focus,
 .register:active {
   outline: none;
-}
-
-/* Add media queries at the end */
-@media screen and (max-width: 320px) {
-  .register {
-    width: 110px;
-    height: 36px;
-  }
-
-  .register span {
-    font-size: 13px;
-  }
-}
-
-@media screen and (min-width: 2000px) {
-  .register {
-    width: 180px;
-    height: 60px;
-  }
-
-  .register span {
-    font-size: 18px;
-  }
 }

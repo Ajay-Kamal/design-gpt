@@ -6,11 +6,11 @@ import Popup from "./Popup/Popup";
 const CompetitiveAnalysis = () => {
   return (
     <div
-      style={{ height: "100vh", width: "100vw"}}
+      style={{ height: "100vh", width: "100vw", backgroundColor: "#191919" }}
     >
-      <NavBar />
       <SideBar />
       <Popup />
+      <NavBar />
     </div>
   );
 };
