@@ -11,7 +11,7 @@ const Footer = () => {
       ([entry]) => {
         setIsInView(entry.isIntersecting);
       },
-      { threshold: 0.3 },
+      { threshold: 0.5 },
     );
 
     if (footerRef.current) {
