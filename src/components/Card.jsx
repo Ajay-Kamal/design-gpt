@@ -18,9 +18,17 @@ const Card = ({ props }) => {
         </div>
       </div>
       <div className="text-wrapper">
-        <div className="main-heading"><p>{props.head}</p></div>
-        <div className="paragraph-text"><p>{props.para}</p></div>
-        <img src="Arrow-final.svg" alt="" className="arrow" />
+        <header>
+          <div className="main-heading">
+            <p>{props.head}</p>
+          </div>
+          <div className="paragraph-text">
+            <p>{props.para}</p>
+          </div>
+        </header>
+        <div className="arrow-container">
+          <img src="Arrow-final.svg" alt="" className="arrow" />
+        </div>
       </div>
     </div>
   );

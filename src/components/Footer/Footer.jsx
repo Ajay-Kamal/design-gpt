@@ -58,8 +58,7 @@ const Footer = () => {
               </>
             )}
           </div>
-          <div
-            className={`footer-mcn-init${
+          <div className={`footer-mcn-init${
               isInView ? " footer-comp-anim-out" : ""
             }`}
           >

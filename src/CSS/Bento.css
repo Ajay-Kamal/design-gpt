@@ -7,7 +7,7 @@
 }
 
 .bento {
-  width: 100vw;
+  width: min(100%, 1920px);
   display: flex;
   position: relative;
   height: clamp(400px, 50vw, 570px);

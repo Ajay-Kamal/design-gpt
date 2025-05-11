@@ -115,13 +115,13 @@
 }
 
 .des-is-art {
-  width: 10.5vw;
-  height: 3.125vw;
-  padding: 0.625vw 1.25vw;
+  width: 13%;
+  height: 7.5%; 
+  padding: 0.625% 1.25%;
   display: flex;
   position: absolute;
-  top: 3.7vw;
-  left: 5vw;
+  top: 8%;
+  left: 8%;
   border-radius: var(--Radius--Xl, 1rem);
   background: linear-gradient(
     186deg,

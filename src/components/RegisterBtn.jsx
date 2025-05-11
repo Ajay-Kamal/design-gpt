@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const RegisterBtn = () => {
   return (
-    <button className="register">
+    <div className="register">
       <Link to="/signup">
         <span className="register__text">Register</span>
       </Link>
-    </button>
+    </div>
   );
 };
 

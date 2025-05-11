@@ -1,36 +1,36 @@
-.home-page{
-  min-height: 200vh;
-  overflow-x: hidden;
-}
 
 .home-page{
-  position: static;
+  position: relative;
   display: flex;
   height: fit-content;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  container-type: inline-size;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .grid {
-  position: absolute;
+  position:absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width:min(100%, 1920px);
   overflow: hidden;
   z-index: -11;
-  background: radial-gradient(
-      circle at top center,
-      rgba(255, 134, 205, 0.3) 20%,
-      #fff9fe 60%
-    ),
-    #fff9fe;
   margin: 0;
   padding: 0; 
-  height: 100%;
+  height: auto;
   overflow-x: hidden;
   background-size: 100% 100vh;
   background-repeat: no-repeat;
   transition: all 0.5sease-in-out;
+  background: radial-gradient(
+    circle at top center,
+    rgba(255, 134, 205, 0.3) 20%,
+    #fff9fe 60%
+  ),
+  #fff9fe;
 }

@@ -12,3 +12,7 @@
     display: none;
   }
 }
+
+.app{
+  width: min(100vww, 1920px);
+}

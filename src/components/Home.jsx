@@ -11,14 +11,14 @@ import "../CSS/Home.css";
 const Home = () => {
   return (
     <div className="home-page">
+      <img src="/grid.svg" alt="grid" className="grid" />
       <Nav />
       <StarComp />
-      <img src="/grid.svg" alt="grid" className="grid" />
       <CardBlock />
       <Bento />
       <DevTeam />
       <DesignTeam />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

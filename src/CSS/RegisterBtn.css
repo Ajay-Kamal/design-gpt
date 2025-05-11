@@ -28,13 +28,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10vw;
-  height: 50%;
+  width: 10cqw;
+  height: 3.5cqw;
   border-radius: 625rem;
-  overflow: hidden;
   background: white;
   backdrop-filter: blur(11px);
-  border: none;
+  border: transparent;
 }
 
 .register:hover {
@@ -50,13 +49,13 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  padding: 0.2vw;
   background: linear-gradient(90deg, #ff009a 0%, #0877fc 100%);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: exclude;
   transition: background 0.3s ease;
+  padding: 0.199cqw;
 }
 
 .register:hover::before {
@@ -76,13 +75,16 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
+  border-radius: inherit;
+  container-type: inline-size;
+  border-radius: inherit;
 }
 
 .register span {
   position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: 1.1vw;
+  font-size: 11cqw;
   font-weight: 500;
   text-transform: capitalize;
   color: #191919;
@@ -106,6 +108,7 @@
   );
   mix-blend-mode: lighten;
   animation: textShine 4s linear infinite;
+  border-radius: inherit;
 }
 
 .register:hover span {
@@ -127,4 +130,11 @@
 .register:focus,
 .register:active {
   outline: none;
+}
+
+/* Need to Check this after */
+@media screen and (min-width: 2020px) {
+  .register::before{
+    padding-top: 0.1cqw;
+  }
 }
