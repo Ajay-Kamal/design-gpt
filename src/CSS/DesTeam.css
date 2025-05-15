@@ -51,7 +51,7 @@
   height: 18.424px;
 }
 
-.dt-content {
+.ds-content {
   align-self: stretch;
   color: var(--Text-Primary-TextColor, #191919);
   text-align: center;
@@ -62,7 +62,7 @@
   line-height: normal;
 }
 
-.dt-content span {
+.ds-content span {
   background: linear-gradient(90deg, #f20790 23.23%, #007aff 90.22%);
   background-clip: text;
   -webkit-background-clip: text;

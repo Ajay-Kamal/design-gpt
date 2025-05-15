@@ -1,7 +1,6 @@
 import "../CSS/Bento.css";
 import { useInView } from "react-intersection-observer";
 import { useStatus } from "./StatusProvider";
-import React from "react";
 
 const Bento = () => {
 
@@ -1162,12 +1161,12 @@ const Bento = () => {
         </svg>
         <div className="ingenerative">
           <div className="interview">
+            <img src="/interview-card.svg" alt="" />
             <img
               src="/interview-top-icon.svg"
               alt="top-icon"
               className="int-top"
             />
-            <img src="/interview-card.svg" alt="" />
           </div>
           <div className="generation">
             <img src="/gener-bg.svg" alt="background" className="gen-grid" />

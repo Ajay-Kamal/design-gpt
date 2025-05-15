@@ -57,7 +57,7 @@ const DesignTeam = () => {
           <p>Overtime Artists</p>
           <img src="/right-curve-tc.svg" alt="" className="right-w" />
         </div>
-        <p className="dt-content">
+        <p className="ds-content">
           Running on 4 hours of sleep and 100% determination to ship <span>'Perfection'</span>
         </p>
       </div>

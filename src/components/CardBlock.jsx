@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 import cardsInfo from "./carddata.js";
 import { Link } from "react-router-dom";

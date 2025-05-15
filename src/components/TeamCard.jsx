@@ -23,7 +23,7 @@ const TeamCard = ({ props }) => {
           <div className="emoji-wrapper"></div>
           <div className="info-container">
             <span className="profile-name">{props.name}</span>
-            <span className="profile-status">Seeking for an opportunity</span>
+            <span className="profile-status">Seeking for an opportunity</span>  
           </div>
         </div>
         <img

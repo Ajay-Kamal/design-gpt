@@ -1,39 +1,159 @@
-@font-face {
-  font-family: "Bohemian"; /* Give your font a name */
-  src: url("/fonts/Bohemian Soul.woff2") format("woff2"),
-    /* Path to the font file */ url("/fonts/Bohemian Soul.woff") format("woff"); /* Fallback for older browsers */
-  font-weight: normal; /* Specify the font weight */
-  font-style: normal; /* Specify the font style */
-}
-
+/* --- OUTER CONTAINER --- */
 .bento {
   width: min(100%, 1920px);
   display: flex;
   position: relative;
-  height: clamp(400px, 50vw, 570px);
-} 
-
-.left-comp {
-  width: 50%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
+  aspect-ratio: 2.53 / 1;
 }
 
+/* --- LEFT SECTION --- */
+.left-comp {
+  width: 48.7%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  container-type: inline-size;
+}
 .left-top {
   width: 100%;
+  height: auto;
   position: absolute;
   top: 0;
 }
+.left-bottom {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+}
+.left-grid {
+  position: absolute;
+  left: -258px;
+  top: -1px;
+  fill: radial-gradient(
+    96.72% 96.59% at 50.05% 91.08%,
+    #fff 69.37%,
+    #ec0992 100%
+  );
+  opacity: 1;
+}
+/* --- RIGHT SECTION --- */
+.right-comp {
+  width: 48.7%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right-top {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+.right-bottom {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+}
 
+/* --- CHOTU (MASCOT/ANIMATION) --- */
+.chotu {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  width: 21%;
+  z-index: 100;
+  height: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  container-type: inline-size;
+}
+
+.chotu svg {
+  width: 100%;
+  height: 100%;
+}
+
+.chotu-animation {
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- EYES & GIF ANIMATION --- */
+.eyes-close {
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: auto;
+  animation: hideEyesClosed 12s infinite ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+.eyes-opened {
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  width: 50%;
+  height: auto;
+  opacity: 0;
+  visibility: hidden;
+  animation: showEyesOpened 12s infinite ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+.pagal-gif {
+  position: absolute;
+  height: 65%;
+  width: 90.5%;
+  opacity: 1;
+  border-radius: 23.199px;
+  top: 3.7%;
+  left: 5%;
+  object-fit: cover;
+  visibility: hidden;
+  animation: showGif 12s infinite ease-in-out;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/* --- RING SECTION --- */
+.ring-sec {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+}
+
+.ring-sec img {
+  width: 90%;
+  height: auto;
+}
+
+/* --- PERSONA GENIE CARD --- */
 .persona-genie {
   position: absolute;
   height: 75%;
   width: 65%;
-  left: 60px;
-  border-radius: 40px;
-  border: 2px solid #fff;
+  left: 8%;
+  border-radius: 7%;
+  border: 0.5cqw solid #fff;
   background: linear-gradient(
     223deg,
     rgba(247, 245, 254, 0.5) 10.31%,
@@ -51,13 +171,13 @@
 .pg-head {
   text-align: center;
   position: relative;
-  top: 40px;
-  width: 470px;
+  top: 10%;
+  width: 100%;
   font-family: "Bohemian";
-  font-size: 55px;
+  font-size: 7.5cqw;
   font-style: normal;
   font-weight: 400;
-  line-height: 104%; /* 57.2px */
+  line-height: 104%;
   background: linear-gradient(94deg, #ff008a 29.89%, #007aff 70.85%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -65,191 +185,37 @@
 }
 
 .pg-tail {
-  width: 424px;
+  width: 90%;
   color: rgba(42, 50, 60, 0.54);
   text-align: center;
   font-family: Poppins;
-  font-size: 18px;
+  font-size: 2.5cqw;
   position: relative;
-  top: 42px;
+  top: 10%;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
-.left-grid {
-  position: absolute;
-  left: -258px;
-  top: -1px;
-  fill: radial-gradient(
-    96.72% 96.59% at 50.05% 91.08%,
-    #fff 69.37%,
-    #ec0992 100%
-  );
-  opacity: 1;
-}
-
-.left-bottom {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-.right-comp {
-  width: 50%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.right-top {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 0;
-}
-
-.right-bottom {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-.chotu {
-  width: fit-content;
-  height: fit-content;
-  position: absolute;
-  top: 50%;
-  z-index: 100;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.chotu-animation {
-  position: absolute;
-  top: 13.4px;
-  width: 274.75px;
-  height: 233.121px;
-  flex-shrink: 0;
-  left: 13px;
-  border-radius: 23.199px;
-  overflow: hidden;
-}
-
-.eyes-close {
-  position: absolute;
-  opacity: 1;
-  visibility: visible;
-  left:23%;
-  top: 35%;
-  animation: hideEyesClosed 12s infinite ease-in-out;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
-
-.eyes-opened {
-  position: absolute;
-  left: 23%;
-  top: 30%;
-  opacity: 0;
-  visibility: hidden;
-  animation: showEyesOpened 12s infinite ease-in-out;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
-
-.pagal-gif {
-  position: absolute;
-  height: 100%;
-  left: -25%;
-  opacity: 0;
-  visibility: hidden;
-  animation: showGif 12s infinite ease-in-out;
-  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
-
-@keyframes hideEyesClosed {
-  0%, 50% {
-    opacity: 1;
-    visibility: visible;
-  }
-  51%, 100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes showEyesOpened {
-  0%, 50% {
-    opacity: 0;
-    visibility: hidden;
-  }
-  51%, 60% {
-    opacity: 1;
-    visibility: visible;
-  }
-  61%, 100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes showGif {
-  0%, 60% {
-    opacity: 0;
-    visibility: hidden;
-  }
-  61%, 100% {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-.ring-sec {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 50%;
-  position: absolute;
-  bottom: 50px;
-  justify-content: center;
-}
-
+/* --- GENERATIVE SECTION --- */
 .ingenerative {
   display: flex;
-  width: fit-content;
   flex-direction: column;
-  gap: 32px;
+  align-items: center;
   position: relative;
-  left: 70px;
-  height: 70%;
+  height: 75%;
+  width: 65%;
+  position: absolute;
+  justify-content: space-between;
+  right: 8%;
+  container-type: inline-size;
 }
 
 .interview {
   position: relative;
-  top: -40px;
-  height: 200px;
-}
-
-.int-top {
-  position: absolute;
-  left: 198px;
-  top: -20px;
-  filter: drop-shadow(-5px 3px 12px rgba(42, 50, 60, 0.07));
-  transform: rotate(-1.875deg);
-  fill: #fff;
-}
-
-.generation {
-  overflow: hidden;
-  height: 55%;
-  align-self: stretch;
-  width: 91%;
-  top: 200px;
-  position: absolute;
-  border-radius: 24px;
-  left: 23px;
-  border: 1px solid #fff;
+  height: 38.75%;
+  width: 100%;
+  position: relative;
   background: linear-gradient(
     224deg,
     rgba(247, 245, 254, 0.5) 10.35%,
@@ -260,109 +226,145 @@
   backdrop-filter: blur(6px);
 }
 
+.interview img:nth-child(1) {
+  width: 100%;
+  scale: 1.1;
+  height: auto;
+  position: relative;
+  top: -8%;
+}
+
+.int-top {
+  position: absolute;
+  top: -20%;
+  left: 38%;
+  filter: drop-shadow(-5px 3px 12px rgba(42, 50, 60, 0.07));
+  transform: rotate(-1.875deg);
+  fill: #fff;
+  width: 20%;
+}
+
+.generation {
+  overflow: hidden;
+  height: 54%;
+  align-self: stretch;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-radius: 1.5rem;
+  border: 0.5cqw solid #fff;
+  background: linear-gradient(
+    224deg,
+    rgba(247, 245, 254, 0.5) 10.35%,
+    rgba(236, 240, 255, 0.5) 88.62%,
+    rgba(255, 234, 255, 0.5) 105.43%
+  );
+  backdrop-filter: blur(6px);
+  box-shadow: 0px 0px 22px 0px rgba(243, 134, 249, 0.18);
+  container-type: inline-size;
+}
+
 .gen-grid {
   position: absolute;
-  left: -150px;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  scale: 1.8;
 }
 
 .gne-head {
   text-align: center;
   font-family: "Bohemian";
-  font-size: 55px;
+  font-size: 12cqw;
+  top: 12%;
+  width: 100%;
   font-style: normal;
   font-weight: 400;
-  line-height: 104%; /* 57.2px */
+  line-height: 104%;
   background: linear-gradient(94deg, #ff008a 29.89%, #007aff 70.85%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: absolute;
-  top: 23px;
-  left: 75px;
+  position: relative;
 }
 
 .gne-tail {
   color: rgba(42, 50, 60, 0.54);
   font-family: Poppins;
-  font-size: 18px;
+  font-size: 3cqw;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  position: absolute;
-  top: 79px;
-  left: 115px;
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
 }
 
+/* --- SLIDER/ANIMATION SECTIONS --- */
 .gen-anime {
   width: 100%;
   height: 50%;
   position: absolute;
   bottom: 0;
   display: flex;
-  gap: 12px;
+  gap: 10%;
   justify-content: center;
   flex-direction: column;
 }
-
 .to-slide {
   display: flex;
-  height: 40px;
+  height: 30%;
   justify-content: flex-start;
   align-self: stretch;
-  gap: 16px;
-  overflow: hidden; /* Hide overflow */
-  position: relative; /* Required for GSAP transformations */
+  gap: 4%;
+  overflow: hidden;
+  position: relative;
   white-space: nowrap;
 }
-
 .to-slide div {
   height: 100%;
   display: flex;
   width: fit-content;
-  padding: 8px 16px;
+  padding: 2% 4%;
   justify-content: center;
   border-radius: var(--Radius--lg, 12px);
   background: #fff;
-  border: 1px solid;
   box-shadow: 0px -4px 3px 0px rgba(227, 227, 227, 0.88) inset,
     0px -2px 2px 0px #fafafa inset;
   align-items: center;
   color: rgba(42, 50, 60, 0.54);
   text-align: center;
   font-family: "Inter";
-  font-size: 16px;
+  font-size: 2.8cqw;
   white-space: nowrap;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 24px */
-  letter-spacing: -0.176px;
-  /* border-image:radial-gradient(180deg, #f20790 -9.58%, #05f 126.62%) 1; 
-    border: 2px solid transparent; */
-  border: 1px solid transparent;
+  line-height: 100%;
+  border:1px solid transparent;
   background: linear-gradient(white, white) padding-box,
     linear-gradient(-180deg, rgba(177, 200, 250, 1), rgba(238, 170, 211, 1))
       border-box;
 }
-
 .fro-slide {
   display: flex;
-  height: 40px;
+  height: 30%;
   justify-content: flex-end;
-  gap: 16px;
+  gap: 4%;
   align-items: center;
   color: rgba(42, 50, 60, 0.54);
   align-self: stretch;
-  overflow: hidden; /* Hide overflow */
-  position: relative; /* Required for GSAP transformations */
+  overflow: hidden;
+  position: relative;
+  container-type: inline-size;
 }
-
 .fro-slide div {
   height: 100%;
   display: flex;
-  padding: 8px 16px;
+  padding: 2% 4%;
   width: max-content;
   border-radius: var(--Radius--lg, 12px);
-  border: 1px solid #d9ccf3;
   align-items: center;
   white-space: nowrap;
   background: #fff;
@@ -372,46 +374,92 @@
   color: var(--Text-Teritary-Text-Color, rgba(25, 25, 25, 0.5));
   text-align: center;
   font-family: Inter;
-  font-size: 16px;
+  font-size: 2.8cqw;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%;
-  letter-spacing: -0.176px;
   border: 1px solid transparent;
   background: linear-gradient(white, white) padding-box,
     linear-gradient(-180deg, rgba(177, 200, 250, 1), rgba(238, 170, 211, 1))
       border-box;
+  align-items: center;
 }
 
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes hideEyesClosed {
+  0%,
+  50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  51%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes showEyesOpened {
+  0%,
+  50% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  51%,
+  60% {
+    opacity: 1;
+    visibility: visible;
+  }
+  61%,
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes showGif {
+  0%,
+  60% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  61%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 @keyframes train-motion {
   0% {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(-970px); /* Move left by 200px (2 children) */
+    transform: translateX(-970px);
   }
   100% {
-    transform: translateX(0); /* Return to the start */
+    transform: translateX(0);
   }
 }
-
 @keyframes train-motion2 {
   0% {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(970px); /* Move left by 200px (2 children) */
+    transform: translateX(970px);
   }
   100% {
-    transform: translateX(0); /* Return to the start */
+    transform: translateX(0);
   }
 }
-
 .to-slide .to-comp {
-  animation: train-motion 30s linear infinite; /* Adjust duration as needed */
+  animation: train-motion 30s linear infinite;
 }
-
 .fro-slide .fro-comp {
   animation: train-motion2 30s linear infinite;
 }
 
+/* --- FONT FACE --- */
+@font-face {
+  font-family: "Bohemian";
+  src: url("/fonts/Bohemian Soul.woff2") format("woff2"),
+    url("/fonts/Bohemian Soul.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
