@@ -5,16 +5,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  container-type: inline-size;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-    /* background: radial-gradient(
-    circle at top center,
-    rgba(255, 134, 205, 0.35) 20%,
-    #fff9fe 60%
-  ), 
-  #fff9fe;*/
+  container-type: inline-size;
 }
 
 .grid {

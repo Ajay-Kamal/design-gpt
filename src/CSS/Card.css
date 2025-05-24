@@ -74,6 +74,15 @@
   overflow: hidden;
 }
 
+#glow {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+}
+
 #group-2 {
   position: absolute;
   top: 65%;
@@ -264,6 +273,12 @@
 }
 
 .wrapper:hover #group-2 {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.wrapper:hover #glow {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.4s ease;

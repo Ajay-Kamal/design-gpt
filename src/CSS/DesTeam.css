@@ -20,7 +20,7 @@
   height: auto;
   aspect-ratio: 1;
   border-radius: 74.25rem;
-  background: rgba(255, 30, 161, 0.20);
+  background: rgba(255, 30, 161, 0.1);
   filter: blur(450px);
 }
 
@@ -30,7 +30,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 4%;
+  margin-bottom: 6%;
+  margin-top: 6%;
   position: relative;
 }
 

@@ -15,7 +15,9 @@
   background: rgba(255, 30, 161, 0.2);
   filter: blur(600px);
   position: absolute;
-  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -30%;
   z-index: -3;
 }
 
@@ -204,7 +206,7 @@
   font-family: Poppins;
   font-size: 2.5cqw;
   position: relative;
-  top: 10%;
+  top: 11%;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -229,12 +231,12 @@
   height: 38.75%;
   width: 100%;
   position: relative;
-  background: linear-gradient(
+  /* background: linear-gradient(
     224deg,
     rgba(247, 245, 254, 0.5) 10.35%,
     rgba(236, 240, 255, 0.5) 88.62%,
     rgba(255, 234, 255, 0.5) 105.43%
-  );
+  ); */
   border-radius: 20%;
   backdrop-filter: blur(6px);
   box-shadow: 0px 0px 22px 0px rgba(243, 134, 249, 0.18);
@@ -314,12 +316,12 @@
 .gne-tail {
   color: rgba(42, 50, 60, 0.54);
   font-family: Poppins;
-  font-size: 3cqw;
+  font-size: 4cqw;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   position: relative;
-  top: 10%;
+  top: 12%;
   width: 100%;
   text-align: center;
 }

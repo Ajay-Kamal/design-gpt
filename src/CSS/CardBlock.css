@@ -5,9 +5,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 2% auto;
   position: relative;
   container-type: inline-size;
+  margin: 4% auto;
 }
 
 .cards{

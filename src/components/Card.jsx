@@ -13,6 +13,7 @@ const Card = ({ props }) => {
           <img src="Ellipse-ring.svg" alt="" id="Ellipse-ring" />
           <img src={props.image} id="logo1" />
           <img src="Group-2.svg" alt="" id="group-2" />
+          <img src="./card-glow.svg" alt="V" id="glow" />
           <img src="logo-ring-1.svg" alt="" id="logo-ring-1" />
           <img src="logo-ring-2.svg" alt="" id="logo-ring-2" />
         </div>
