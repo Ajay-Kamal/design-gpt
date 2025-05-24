@@ -6,6 +6,19 @@
   aspect-ratio: 2.53 / 1;
 }
 
+.bento-grad {
+  width: 80%;
+  height: auto;
+  aspect-ratio: 1;
+  transform: rotate(90deg);
+  border-radius: 74.25rem;
+  background: rgba(255, 30, 161, 0.2);
+  filter: blur(600px);
+  position: absolute;
+  top: 0;
+  z-index: -3;
+}
+
 /* --- LEFT SECTION --- */
 .left-comp {
   width: 48.7%;
@@ -84,7 +97,7 @@
 
 .chotu-animation {
   position: absolute;
-  top:0;
+  top: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -153,7 +166,7 @@
   width: 65%;
   left: 8%;
   border-radius: 7%;
-  border: 0.5cqw solid #fff;
+  border: 0.4cqw solid #fff;
   background: linear-gradient(
     223deg,
     rgba(247, 245, 254, 0.5) 10.31%,
@@ -222,8 +235,9 @@
     rgba(236, 240, 255, 0.5) 88.62%,
     rgba(255, 234, 255, 0.5) 105.43%
   );
-  box-shadow: 0px 0px 22px 0px rgba(243, 134, 249, 0.18);
+  border-radius: 20%;
   backdrop-filter: blur(6px);
+  box-shadow: 0px 0px 22px 0px rgba(243, 134, 249, 0.18);
 }
 
 .interview img:nth-child(1) {
@@ -244,6 +258,14 @@
   width: 20%;
 }
 
+.interview-card-circle {
+  position: absolute;
+  top: 55.5%;
+  left: 2.7%;
+  width: 7.5%;
+  height: auto;
+}
+
 .generation {
   overflow: hidden;
   height: 54%;
@@ -252,7 +274,7 @@
   position: absolute;
   bottom: 0;
   border-radius: 1.5rem;
-  border: 0.5cqw solid #fff;
+  border: 0.4cqw solid #fff;
   background: linear-gradient(
     224deg,
     rgba(247, 245, 254, 0.5) 10.35%,
@@ -342,7 +364,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  border:1px solid transparent;
+  border: 1px solid transparent;
   background: linear-gradient(white, white) padding-box,
     linear-gradient(-180deg, rgba(177, 200, 250, 1), rgba(238, 170, 211, 1))
       border-box;

@@ -9,6 +9,7 @@
   align-items: center;
   box-sizing: border-box;
   container-type: inline-size;
+  background: linear-gradient(180deg, rgba(253, 223, 242, 0.80) 52.58%, rgba(253, 223, 242, 0.00) 100%);
 }
 
 .logo {
@@ -113,8 +114,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90%;
-  width: 90%;
+  height: 85%;
+  width: 88%;
   border-radius: 50%;
   background: linear-gradient(90deg, #f20790 0%, #007aff 100%);
   box-shadow: -0.4px -0.2px 0px 0px rgba(255, 255, 255, 0.08) inset,

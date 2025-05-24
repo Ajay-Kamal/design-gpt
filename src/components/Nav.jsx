@@ -1,4 +1,3 @@
-import React from "react";
 import { useStatus } from "./StatusProvider";
 import "../CSS/Navbar.css";
 import RegisterBtn from "./RegisterBtn";

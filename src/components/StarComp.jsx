@@ -5,6 +5,7 @@ import Name from "./Name";
 const StarComp = () => {
   return (
     <div className="svg-container">
+      <div className="hero-grad"></div>
       <svg
         width="1015"
         height="586"

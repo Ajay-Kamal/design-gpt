@@ -1,48 +1,73 @@
 .profile-container {
   position: relative;
-  width: 17.16%;  
+  width: 17.16%;
   height: auto;
-  aspect-ratio: 15.44 / 20.06; 
-
+  aspect-ratio: 15.44 / 20.06;
 }
 
 .profile-frame {
   position: relative;
-  width: 87.4%;
-  height: 93.4%;
-  padding: 4.05%;
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 1;
-  border-radius: 1rem;
+  border-radius: 1.7cqw;
   border: 1px solid #fff;
-  background: transparent;
   box-shadow: 0px 0px 1.676px 0px rgba(102, 112, 133, 0.24);
   transition: box-shadow 0.3s ease, border 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(224deg, #f7f5fe 10.35%, #f7f5fe 97.41%);
+  overflow: visible;
 }
 
 .profile-background {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  padding: 4.05%;
   object-position: center;
-  border-radius: 1rem;
+  border-radius: inherit;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-gif {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  border-radius: 0.8cqw;
+  object-fit: cover;
+}
+
+.profile-back-img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  border-radius: 0.8cqw;
 }
 
 .profile-top {
   position: absolute;
   width: 100%;
   height: 100%;
-  left: -1%;  
+  left: -1%;
   opacity: 1;
   object-fit: cover;
   z-index: 2;
-  transform: scale(0.93);
+  transform: scale(0.94);
   transition: opacity 0.3s ease;
   border-radius: inherit;
+  top: -0.5%;
 }
 
 .profile-container:hover .profile-top {
@@ -62,8 +87,8 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 9.6%;
-  transform: translateX(-40%);
+  top: 11.5%;
+  transform: translateX(-27%);
   z-index: 5;
   border-radius: 50%;
   background: linear-gradient(
@@ -72,7 +97,8 @@
     rgba(247, 245, 254, 0.74) 97.41%
   );
   backdrop-filter: blur(5px);
-  box-shadow: 0px 0px 1.676px 0px rgba(102, 112, 133, 0.24);
+  scale: 1.1;
+  box-shadow: 0px 0 1.676px 0 rgba(102, 112, 133, 0.24);
 }
 
 .profile-container:hover .icon-wrapper {
@@ -180,10 +206,8 @@
   bottom: 7%;
   display: flex;
   width: 85%;
-  height: 12%;
-  padding: 4px 12px 4px 8px;
+  height: 14%;
   align-items: center;
-  gap: 6px;
   border-radius: 1000px;
   border: 1px solid rgba(255, 255, 255, 0.52);
   background: linear-gradient(
@@ -195,51 +219,62 @@
     0px -1.676px 1.676px 0px rgba(255, 255, 255, 0.25) inset;
   backdrop-filter: blur(26.8108px);
   z-index: 5;
+  justify-content: center;
 }
 
 .emoji-wrapper {
-  width: 33px;
-  height: 33px;
-  border-radius: 1000px;
-  background: url(/teamcard-Memoji.svg) lightgray 0px 3.094px / 100% 100%
-    no-repeat;
+  height: 100%;
+  width: 25%;
+  border: radius 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emoji-wrapper img {
+  width: auto;
+  height: 71.7%;
+  aspect-ratio: 1 / 1;
 }
 
 .info-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 80%;
 }
 
 .profile-name {
   display: flex;
-  width: 134px;
-  height: 20px;
+  width: 100%;
+  height: 50%;
   flex-direction: column;
   justify-content: center;
   text-shadow: 0.335px 0.335px 0px rgba(0, 0, 0, 0.09);
   font-family: Poppins;
-  font-size: 16px;
   font-weight: 500;
   background: linear-gradient(90deg, #f20790 0.37%, #007aff 43.5%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
+  font-size: 0.9cqw;
 }
 
 .profile-status {
   color: var(--Text-Secondary-TextColor, rgba(25, 25, 25, 0.6));
   font-family: Poppins;
-  font-size: 12px;
+  height: 40%;
+  width: 100%;
+  font-size: 0.6cqw;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.profile-container:hover .emoji-wrapper {
+/* .profile-container:hover .emoji-wrapper {
   background: url(/teamcard-memojicircle.svg) no-repeat;
-}
+} */
 
 .profile-container:hover .profile-name {
   background: none;

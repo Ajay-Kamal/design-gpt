@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   * {
     content: "";
     background-color: white;
     visibility: hidden;
     display: none;
   }
-}
+} */
 
 .app{
   width: min(100vww, 1920px);

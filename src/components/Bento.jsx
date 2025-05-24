@@ -3,7 +3,6 @@ import { useInView } from "react-intersection-observer";
 import { useStatus } from "./StatusProvider";
 
 const Bento = () => {
-
   const { setStatus } = useStatus();
 
   const { ref, inView } = useInView({
@@ -12,14 +11,17 @@ const Bento = () => {
   });
 
   return (
-    <div className="bento" onMouseEnter={() =>
-      setStatus({ text: "Bento:", subText: "Macintosh Chhotu activated" })
-    }
-    onMouseLeave={() =>
-      setStatus({ text: "Welcome Home", subText: "" })
-    }>
+    <div
+      className="bento"
+      onMouseEnter={() =>
+        setStatus({ text: "Bento:", subText: "Macintosh Chhotu activated" })
+      }
+      onMouseLeave={() => setStatus({ text: "Welcome Home", subText: "" })}
+    >
+      <div className="bento-grad"></div>
       <div ref={ref} className="left-comp">
-        <svg className="left-top"
+        <svg
+          className="left-top"
           width="702"
           height="108"
           viewBox="0 0 702 108"
@@ -173,19 +175,20 @@ const Bento = () => {
               <stop offset="0.664949" stopColor="#F20790" />
               <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
             </linearGradient>
-             {inView&&( <linearGradient
+            {inView && (
+              <linearGradient
                 id="paint1_linear_7183_7015"
                 x1="-6.00005"
                 y1="10.5"
                 x2="653.905"
                 y2="110.807"
                 gradientUnits="userSpaceOnUse"
-              >   
-                  <stop stopColor="#0D77FB" />
-                  <stop offset="0.664949" stopColor="#F20790" />
-                  <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
-                  {inView&&(
-                   <animateTransform
+              >
+                <stop stopColor="#0D77FB" />
+                <stop offset="0.664949" stopColor="#F20790" />
+                <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
+                {inView && (
+                  <animateTransform
                     attributeName="gradientTransform"
                     type="translate"
                     keyTimes="0; 0.2; 0.5; 1"
@@ -198,8 +201,10 @@ const Bento = () => {
                     // values="-800 0; -800 0; 200 0; 0 0"
                     // dur="10s"
                     // repeatCount="indefinite"
-                  />)}
-              </linearGradient>)}
+                  />
+                )}
+              </linearGradient>
+            )}
             <linearGradient
               id="paint2_linear_7183_7015"
               x1="293.309"
@@ -243,7 +248,8 @@ const Bento = () => {
             <img src="/total-circles.svg" alt="" />
           </div>
         </div>
-        <svg className="left-bottom"
+        <svg
+          className="left-bottom"
           width="701"
           height="108"
           viewBox="0 0 701 108"
@@ -397,27 +403,28 @@ const Bento = () => {
               <stop offset="0.664949" stopColor="#F20790" />
               <stop offset="1" stopColor="#FF009A" stopOpacity="0" />
             </linearGradient>
-            { inView && (
-            <linearGradient
-              id="paint1_linear_7183_7268"
-              x1="-6.00005"
-              y1="10.5"
-              x2="653.905"
-              y2="110.807"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop offset="0.001" stopColor="#0D77FB" />
-              <stop offset="0.3" stopColor="#FF009A" />
-              <stop offset="1" stopColor="#FF009A00" />
-               <animateTransform
-                attributeName="gradientTransform"
-                type="translate"
-                keyTimes="0; 0.2; 0.5; 1"
-                values="-800 0; -800 0; 200 0; 200 0"
-                dur="12s"
-                repeatCount="indefinite"
-              />
-            </linearGradient>)}
+            {inView && (
+              <linearGradient
+                id="paint1_linear_7183_7268"
+                x1="-6.00005"
+                y1="10.5"
+                x2="653.905"
+                y2="110.807"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.001" stopColor="#0D77FB" />
+                <stop offset="0.3" stopColor="#FF009A" />
+                <stop offset="1" stopColor="#FF009A00" />
+                <animateTransform
+                  attributeName="gradientTransform"
+                  type="translate"
+                  keyTimes="0; 0.2; 0.5; 1"
+                  values="-800 0; -800 0; 200 0; 200 0"
+                  dur="12s"
+                  repeatCount="indefinite"
+                />
+              </linearGradient>
+            )}
             <linearGradient
               id="paint2_linear_7183_7268"
               x1="291.831"
@@ -971,7 +978,8 @@ const Bento = () => {
         </div>
       </div>
       <div className="right-comp">
-        <svg className="right-top"
+        <svg
+          className="right-top"
           width="702"
           height="108"
           viewBox="0 0 702 108"
@@ -1167,6 +1175,11 @@ const Bento = () => {
               alt="top-icon"
               className="int-top"
             />
+            <img
+              src="/interview-card-circle.svg"
+              className="interview-card-circle"
+              alt=""
+            />
           </div>
           <div className="generation">
             <img src="/gener-bg.svg" alt="background" className="gen-grid" />
@@ -1196,7 +1209,8 @@ const Bento = () => {
             </div>
           </div>
         </div>
-        <svg className="right-bottom"
+        <svg
+          className="right-bottom"
           width="701"
           height="108"
           viewBox="0 0 701 108"

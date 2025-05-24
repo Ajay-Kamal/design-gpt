@@ -11,8 +11,21 @@
   container-type: inline-size;
 }
 
-.svg-container svg{
+.svg-container svg {
   width: 66%;
   height: auto;
   margin-top: -9cqw;
 }
+
+.hero-grad {
+  width: 74.25rem;
+  height: 74.25rem;
+  transform: rotate(90deg);
+  border-radius: 74.25rem;
+  background: rgba(255, 30, 161, 0.2);
+  filter: blur(600px);
+  position: absolute;
+  top: -90%;
+  z-index: -1;
+}
+
