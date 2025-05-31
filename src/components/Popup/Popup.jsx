@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Popup.css";
 import StarAnimation from "../StarAnimation";
+import { useChat } from "../Contexts/ChatContext";
+import ChatSection from "../ChatSection/ChatSection";
 
 const Popup = () => {
   const [currentFile, setCurrentFile] = useState(null);
@@ -9,8 +11,8 @@ const Popup = () => {
   const [starSlideUp, setStarSlideUp] = useState(false);
   const [popupBgWhite, setPopupBgWhite] = useState(false);
   const [promptText, setPromptText] = useState("");
+  const { chatHistory, setChatHistory } = useChat();
 
-  // Callback for when StarAnimation is ready to slide up
   const handleStarAnimationComplete = () => {
     setTimeout(() => {
       setStarSlideUp(true);
@@ -20,7 +22,6 @@ const Popup = () => {
     }, 1000);
   };
 
-  // File/image handlers
   const handleFile = (file) => {
     if (file.type.startsWith("image/")) {
       if (file.size > 2 * 1024 * 1024) {
@@ -86,7 +87,8 @@ const Popup = () => {
   };
 
   async function chatWithAI(userMessage) {
-    const response = await fetch("https://locoaiv3.onrender.com/api/chat", {
+    const textBackendKey = import.meta.env.VITE_TEXT_BACKEND_KEY;
+    const response = await fetch(textBackendKey, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -98,40 +100,58 @@ const Popup = () => {
         top_p: 1.0,
         max_tokens: 4096,
         system_prompt:
-          "You are a helpful AI assistant especially for product designers.",
+          "Your name is Loco AI and you are a helpful AI assistant especially for Product Designers.",
       }),
     });
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let fullResponse = "";
 
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      const chunk = decoder.decode(value);
-      fullResponse += chunk;
-      const json = JSON.parse(fullResponse);
-      console.log(json.response);54
-    }
+    // If your API returns a single JSON object:
+    const data = await response.json();
+    return data.response; // Adjust this property based on your API's response
   }
 
   const handleSend = () => {
     const textInput = promptText.trim();
-    setPromptText("");
-    if (currentFile || textInput !== "") {
-      chatWithAI(textInput)
-        .then(() => {
-          setPromptText("");
-          setCurrentFile(null);
-          setErrorMessage("");
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          setErrorMessage("An error occurred while sending the message.");
-        });
-    } else {
+    if (!textInput && !currentFile) {
       alert("Please type a message or upload an image.");
+      return;
     }
+
+    setChatHistory((prev) => [
+      ...prev,
+      {
+        input: { text: textInput, image: currentFile },
+        output: "",
+        loading: true,
+      },
+    ]);
+    setPromptText("");
+    setCurrentFile(null);
+    setErrorMessage("");
+
+    chatWithAI(textInput)
+      .then((aiResponse) => {
+        setChatHistory((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1] = {
+            ...updated[updated.length - 1],
+            output: aiResponse,
+            loading: false,
+          };
+          return updated;
+        });
+      })
+      .catch((error) => {
+        setErrorMessage("An error occurred while sending the message.");
+        setChatHistory((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1] = {
+            ...updated[updated.length - 1],
+            output: "Error: Could not get response.",
+            loading: false,
+          };
+          return updated;
+        });
+      });
   };
 
   return (
@@ -144,10 +164,12 @@ const Popup = () => {
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
+      {starSlideUp && <ChatSection />}
       <StarAnimation
         onComplete={handleStarAnimationComplete}
         slideUp={starSlideUp}
       />
+
       <div
         className={`popup-chatbox${starSlideUp ? " center-after-star" : ""}`}
       >

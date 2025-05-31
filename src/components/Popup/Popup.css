@@ -27,8 +27,8 @@
 
 .popup-chatbox {
   padding-top: 1.5px;
-  min-height: 20vh;
-  width: 70%;
+  min-height: 20%;
+  width: 80%;
   opacity: 1; /* Ensure it's visible */
   animation-delay: 30s; /* Start after stars and line disappear (1s delay for background change + 1s for stars/line animation) */
   transition: top 1s ease-in-out;
@@ -42,7 +42,8 @@
   bottom: -10%;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
   transition:
-    bottom 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+    bottom 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  transform : scale(0.9);
 }
 
 .popup-chatbox.visible {
@@ -50,7 +51,7 @@
 }
 
 .popup-chatbox.center-after-star {
-  bottom: 10%;
+  bottom: 5%;
 }
 
 .popup-chat-box1 {

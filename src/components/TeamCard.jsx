@@ -20,6 +20,7 @@ const TeamCard = ({ props }) => {
         setStatus({ text: "Welcome Home", subText: "" });
       }}
     >
+      <div className="back-icon-wrapper"></div>
       <div className="profile-frame">
         <div className="profile-box">
           <div className="emoji-wrapper">

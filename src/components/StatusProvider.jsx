@@ -6,10 +6,10 @@ export const useStatus = () => useContext(StatusContext);
 
 export const StatusProvider = ({ children }) => {
   const [status, setStatus] = useState({
-    text: "Welcome Home", // Primary status text
-    subText: "", // Secondary status text
+    text: "Welcome Home", 
+    subText: "",
   });
-  const [mesgCnt, setMesgCnt] = useState(0); // 🔹 Add message count state
+  const [mesgCnt, setMesgCnt] = useState(0);
 
   return (
     <StatusContext.Provider value={{ status, setStatus, mesgCnt, setMesgCnt }}>

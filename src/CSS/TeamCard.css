@@ -35,7 +35,7 @@
   align-items: center;
 }
 
-.profile-mask{
+.profile-mask {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -79,6 +79,21 @@
   opacity: 0;
 }
 
+.back-icon-wrapper {
+  position: absolute;
+  display: flex;
+  width: 29%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  top: 11.4%;
+  transform: translateX(-27%);
+  scale: 1.1;
+  box-shadow: 0px 0px 1.676px 0px rgba(102, 112, 133, 0.24);
+  border-radius: 50%;
+}
+
 .icon-wrapper {
   display: flex;
   width: 29%;
@@ -91,22 +106,14 @@
   transform: translateX(-27%);
   z-index: 5;
   border-radius: 50%;
-   background: linear-gradient(
-    224deg,
-    rgba(247, 245, 254, 0.74) 10.35%,
-    rgba(247, 245, 254, 0.74) 97.41%
-  );
+  background: white;
   backdrop-filter: blur(5px);
   scale: 1.1;
-  box-shadow: 0px 0 1.676px 0 rgba(102, 112, 133, 0.24);
+  /* box-shadow: 0px 0 calc(0.2 * 3.1416 * 100px / 2) 0 rgba(102, 112, 133, 0.24); */
 }
 
 .profile-container:hover .icon-wrapper {
-  background: linear-gradient(
-    224deg,
-    rgba(247, 245, 254, 0.74) 10.35%,
-    rgba(247, 245, 254, 0.74) 97.41%
-  );
+  background: white;
 }
 
 .inner-icon {
