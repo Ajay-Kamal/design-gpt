@@ -8,30 +8,30 @@ const DevTeam = () => {
     {
       id: 1,
       name: "Praharsha",
-      pic: "/teamcard-Praharsha.svg",
-      link: "https://www.linkedin.com/in/praharsha-nelaturi/",
-      gif:"/teamcard-PRAHARSHA.gif"
+      pic: "/teamcard-.svg",
+      link: "https://www..com/in/praharsha-nelaturi/",
+      gif:"/teamcard-.gif"
     },
     {
       id: 2,
       name: "Ajay",
-      pic: "/teamcard-Ajay.png",
-      link: "https://www.linkedin.com/in/ajay-kamal-tavitiki-5933632a7/",
-      gif:"/teamcard-AJAY.gif"
+      pic: "/teamcard-.png",
+      link: "https://www..com/in/ajay-kamal-tavitiki-5933632a7/",
+      gif:"/teamcard-.gif"
     },
     {
       id: 3,
       name: "Preetham",
-      pic: "/teamcard-Preetham.svg",
-      link: "https://www.linkedin.com/in/preetham-nelaturi-6a6696290/",
-      gif:"/teamcard-PREETHAM.gif"
+      pic: "/teamcard-.svg",
+      link: "https://www.com/in/preetham-nelaturi-6a6696290/",
+      gif:"/teamcard-.gif"
     },
     {
       id: 4,
       name: "Nancy",
-      pic: "/teamcard-Nancy.svg",
-      link: "https://www.linkedin.com/in/nancy-dhakate-615316282/",
-      gif:"/teamcard-NANCY.gif"
+      pic: "/teamcard-.svg",
+      link: "https://www..com/in/nancy-dhakate-615316282/",
+      gif:"/teamcard-.gif"
     }
   ];
 
